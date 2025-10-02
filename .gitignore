@@ -11,7 +11,7 @@ examples/linux-ps-profiling/primer
 examples/linux-powerjoular-profiling/primer
 **/__pycache__/
 **/experiments/
-!**/experiments/*.csv
+!*.csv
 */.DS_Store
 .DS_Store
 .vscode
