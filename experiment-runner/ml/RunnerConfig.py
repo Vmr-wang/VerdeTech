@@ -46,22 +46,23 @@ class RunnerConfig:
             (RunnerEvents.AFTER_EXPERIMENT , self.after_experiment )
         ])
         self.run_table_model = None  # Initialized later
+        self.profiler_stdout = ""     # 用于存储 profiler 的输出
 
-        output.console_log("Custom config loaded (Logistic Regression)")
+        output.console_log("Custom config loaded (Logistic Regression - Real Datasets)")
 
     def create_run_table_model(self) -> RunTableModel:
         """Create and return the run_table model here."""
+        # 使用数据集名称作为因子
         factor1 = FactorModel("impl", ['skl', 'xgb', 'trh'])
-        factor2 = FactorModel("dataset_size", [1000, 10000, 50000])  # 可以根据需求调整
-
+        factor2 = FactorModel("dataset", ['iris', 'wine', 'breast_cancer', 'digits'])
+        
         self.run_table_model = RunTableModel(
             factors=[factor1, factor2],
             exclude_combinations=[
-                # 举例：torch 在超大数据集上可能排除
-                {factor1: ['torch'], factor2: [50000]},
+                # 如果需要排除某些组合，在这里添加
             ],
             repetitions=5,
-            data_columns=["energy", "runtime", "memory"]
+            data_columns=["dataset_name", "actual_size", "n_features", "energy", "runtime", "memory", "accuracy"]
         )
         return self.run_table_model
 
@@ -76,11 +77,12 @@ class RunnerConfig:
 
     def start_measurement(self, context: RunnerContext) -> None:
         """启动逻辑回归的不同实现"""
+        # 正确：使用 execute_run（根据你的原始代码）
         impl = context.execute_run["impl"]
-        dataset_size = context.execute_run["dataset_size"]
+        dataset = context.execute_run["dataset"]
 
         self.profiler = EnergiBridge(
-            target_program=f"/home/abigale/anaconda3/envs/experiment-runner/bin/python ml/LR_{impl}.py {dataset_size}",
+            target_program=f"/home/abigale/anaconda3/envs/experiment-runner/bin/python ml/LR_{impl}.py {dataset}",
             out_file=context.run_dir / "energibridge.csv"
         )
         self.profiler.start()
@@ -89,12 +91,13 @@ class RunnerConfig:
         pass
 
     def stop_measurement(self, context: RunnerContext) -> None:
-        stdout = self.profiler.stop(wait=True)
+        self.profiler_stdout = self.profiler.stop(wait=True)
 
     def stop_run(self, context: RunnerContext) -> None:
         pass
 
     def populate_run_data(self, context: RunnerContext) -> Optional[Dict[str, Any]]:
+        """收集运行数据并返回"""
         eb_log, eb_summary = self.profiler.parse_log(
             self.profiler.logfile, 
             self.profiler.summary_logfile
@@ -103,14 +106,52 @@ class RunnerConfig:
         # 使用 PACKAGE_ENERGY 代替 SYSTEM_POWER
         energy_values = list(eb_log["PACKAGE_ENERGY (J)"].values())
         
+        # 从 stdout 解析数据集信息
+        dataset_info = self._parse_dataset_info(self.profiler_stdout)
+        
         return {
-            "energy": energy_values[-1] - energy_values[0],  # 总能耗差值
+            "dataset_name": dataset_info.get("dataset_name", "Unknown"),
+            "actual_size": dataset_info.get("actual_size", 0),
+            "n_features": dataset_info.get("n_features", 0),
+            "energy": energy_values[-1] - energy_values[0],
             "runtime": eb_summary["runtime_seconds"], 
-            "memory": max(eb_log["USED_MEMORY"].values())
+            "memory": max(eb_log["USED_MEMORY"].values()),
+            "accuracy": dataset_info.get("accuracy", 0.0)
         }
 
+    def _parse_dataset_info(self, stdout: str) -> Dict[str, Any]:
+        """从 stdout 解析数据集信息"""
+        info = {}
+        
+        if not stdout:
+            return info
+        
+        lines = stdout.split('\n')
+        for line in lines:
+            line = line.strip()
+            
+            if "DATASET_NAME:" in line:
+                info["dataset_name"] = line.split(":", 1)[1].strip()
+            elif "ACTUAL_SIZE:" in line:
+                try:
+                    info["actual_size"] = int(line.split(":", 1)[1].strip())
+                except ValueError:
+                    info["actual_size"] = 0
+            elif "N_FEATURES:" in line:
+                try:
+                    info["n_features"] = int(line.split(":", 1)[1].strip())
+                except ValueError:
+                    info["n_features"] = 0
+            elif "ACCURACY:" in line:
+                try:
+                    info["accuracy"] = float(line.split(":", 1)[1].strip())
+                except ValueError:
+                    info["accuracy"] = 0.0
+        
+        return info
+
     def after_experiment(self) -> None:
-        pass
+        output.console_log("Experiment completed! Check the results in the experiments folder.")
 
     # ================================ DO NOT ALTER BELOW THIS LINE ================================
     experiment_path:            Path             = None
