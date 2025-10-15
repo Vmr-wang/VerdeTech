@@ -13,6 +13,7 @@ from pathlib import Path
 from os.path import dirname, realpath
 import numpy as np
 import time
+import sys
 
 
 class RunnerConfig:
@@ -46,7 +47,7 @@ class RunnerConfig:
         factor_alg = FactorModel("alg", ['LR', 'RR', 'DT', 'KMeans'])
         factor_iml = FactorModel("impl", ['skl_cpu', 'intelex_cpu', 'xgb_cpu', 'xgb_gpu', 'tf_gpu', 'trh_gpu'])
         factor_dataset = FactorModel("dataset", ['iris', 'wine', 'breast_cancer', 'digits'])
-        
+        # TODO: experiment such as LR__xgb_cpu.py does not exist,we need to make the Cartesian product nice and correct，the code could run now,but generate ugly csvs with missing line
 
         self.run_table_model = RunTableModel(
             factors=[factor_alg, factor_iml, factor_dataset],
@@ -97,11 +98,8 @@ class RunnerConfig:
         self.gpu_enabled = any(k in impl.lower() for k in gpu_keywords)
 
         # --- CPU profiler (EnergiBridge) ---
-        '''
-        这里应该需要更改为相对路径，等最后记得改
-        '''
         self.profiler_cpu = EnergiBridge(
-            target_program=f"/workspace/greenLab/VerdeTech/experiment-runner/python3 ml/{alg}_{impl}.py {dataset}",
+            target_program=f"{sys.executable} ml/{alg}_{impl}.py {dataset}",
             out_file=context.run_dir / "energibridge.csv"
         )
         self.profiler_cpu.start()
@@ -143,14 +141,22 @@ class RunnerConfig:
             cpu_energy = vals[-1] - vals[0]
 
         # --- CPU utilization (avg across cores) ---
-        cpu_util_cols = [c for c in eb_log.columns if c.startswith("CPU_USAGE_")]
-        cpu_util = (
-            np.mean([eb_log[c].mean() for c in cpu_util_cols])
-            if cpu_util_cols else None
-        )
+        cpu_util_cols = [c for c in eb_log.keys() if c.startswith("CPU_USAGE_")]
+        cpu_util = None
+        if cpu_util_cols:
+            # 计算所有 CPU 核心的平均利用率
+            all_values = []
+            for col in cpu_util_cols:
+                all_values.extend(list(eb_log[col].values()))
+            cpu_util = np.mean(all_values) if all_values else None
 
         runtime = eb_summary.get("runtime_seconds", 0)
-        max_memory = max(eb_log["USED_MEMORY"].values()) if "USED_MEMORY" in eb_log else 0
+        
+        # --- Memory handling ---
+        max_memory = 0
+        if "USED_MEMORY" in eb_log:
+            memory_values = list(eb_log["USED_MEMORY"].values())
+            max_memory = max(memory_values) if memory_values else 0
 
         dataset_info = self._parse_dataset_info(self.profiler_stdout)
 
