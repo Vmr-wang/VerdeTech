@@ -29,3 +29,21 @@ Session.vim
 Vagrantfile
 
 __MACOSX/
+# macOS
+._*
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+*.egg-info/
+*.pyc
