@@ -47,3 +47,5 @@ env/
 ENV/
 *.egg-info/
 *.pyc
+._*
+.DS_Store
