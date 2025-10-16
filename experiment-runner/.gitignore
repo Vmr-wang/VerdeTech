@@ -1,3 +1,34 @@
+.vagrant
+macos-sonoma.conf
+macos-sonoma/
+Vagrantfile
+Session.vim
+.idea
+.venv
+.vagrant
+*/__pycache__/*
+examples/linux-ps-profiling/primer
+examples/linux-powerjoular-profiling/primer
+**/__pycache__/
+# 忽略所有 experiments 文件夹的内容
+**/experiments/*
+
+# 但要保留这个特定文件，需要先"不忽略"它的父文件夹路径
+!experiment-runner/ml/experiments/
+!experiment-runner/ml/experiments/logreg_energy_experiment/
+!experiment-runner/ml/experiments/logreg_energy_experiment/run_table.csv
+*/.DS_Store
+.DS_Store
+.vscode
+.python-version
+tmp/
+_trial_temp/
+pycharm-interpreter.sh
+python
+Session.vim
+Vagrantfile
+
+__MACOSX/
 # macOS
 ._*
 .DS_Store

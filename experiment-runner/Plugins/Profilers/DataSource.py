@@ -8,6 +8,9 @@ import shlex
 import os
 import ctypes
 from enum import Enum
+from ProgressManager.Output.OutputProcedure import OutputProcedure as output
+
+
 
 class StrEnum(str, Enum):
     pass
@@ -166,9 +169,20 @@ class CLISource(DataSource):
             raise RuntimeError(f"{self.source_name} did not start correctly")
 
     def _validate_stop(self, stdout, stderr):
-        if stderr:
+        # Ignore sklearnex informational messages
+        if "Extension for Scikit-learn" in stderr:
+            stderr = ""
+
+        # Ignore common non-critical warnings from XGBoost and other libraries
+        if "WARNING" in stderr or "warning" in stderr:
+            output.console_log(f"[ENERGIBRIDGE WARNING IGNORED] {stderr.strip()}")
+            stderr = ""
+
+        # Only raise an exception if stderr contains actual errors or exceptions
+        if "error" in stderr.lower() or "exception" in stderr.lower():
             raise RuntimeWarning(f"{self.source_name} did not stop correctly, or encountered an error: {stderr}")
-    
+
+        
     # Should work well with single level type generics e.g. list[int]
     # TODO: Expand this to be more robust with other types
     def _validate_type(self, param, p_type):
