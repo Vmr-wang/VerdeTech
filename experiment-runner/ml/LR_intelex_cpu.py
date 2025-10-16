@@ -1,12 +1,39 @@
+#!/home/abigale/anaconda3/envs/experiment-runner/bin/python
 import sys
 import time
-from sklearnex import patch_sklearn
-patch_sklearn()  # 必须在 sklearn 导入前调用！
+import os
+import warnings
+
+# 方法1: 使用正确的日志级别（抑制 INFO 及以下）
+os.environ['SKLEARNEX_VERBOSE'] = 'ERROR'
+
+# 方法2: 过滤所有警告
+warnings.filterwarnings('ignore')
+
+# 方法3: 临时重定向 stderr（最彻底）
+import io
+import contextlib
+
+@contextlib.contextmanager
+def suppress_stderr():
+    """临时抑制 stderr 输出"""
+    old_stderr = sys.stderr
+    sys.stderr = io.StringIO()
+    try:
+        yield
+    finally:
+        sys.stderr = old_stderr
+
+# 在导入 sklearnex 时抑制所有输出
+with suppress_stderr():
+    from sklearnex import patch_sklearn
+    patch_sklearn()
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import load_breast_cancer, load_iris, load_wine, load_digits
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+
 
 def run_logistic_regression_sklearn_intelex(dataset_name: str, random_state: int = 42):
     """
@@ -19,24 +46,20 @@ def run_logistic_regression_sklearn_intelex(dataset_name: str, random_state: int
         mask = data.target < 2
         X, y = data.data[mask], data.target[mask]
         display_name = "Iris"
-
     elif dataset_name == 'wine':
         data = load_wine()
         mask = data.target < 2
         X, y = data.data[mask], data.target[mask]
         display_name = "Wine"
-
     elif dataset_name == 'breast_cancer':
         data = load_breast_cancer()
         X, y = data.data, data.target
         display_name = "Breast Cancer"
-
     elif dataset_name == 'digits':
         data = load_digits()
         mask = data.target < 2
         X, y = data.data[mask], data.target[mask]
         display_name = "Digits"
-
     else:
         raise ValueError(f"Unknown dataset: {dataset_name}")
 
