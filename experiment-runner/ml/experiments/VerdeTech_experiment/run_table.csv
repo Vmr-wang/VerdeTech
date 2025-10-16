@@ -1,8 +1,8 @@
 __run_id,__done,alg,impl,dataset,actual_size,n_features,cpu_energy,cpu_util,gpu_energy,gpu_util,runtime,memory,accuracy,
-run_0_repetition_0,DONE,LR,skl_cpu,iris,100,4,28.458190917972388,43.57301876374653,,,1.0010172,10867355648,1.0,Iris
-run_1_repetition_0,DONE,LR,skl_cpu,wine,130,13,18.85186767578125,30.78601135810216,,,0.80096537,10861858816,1.0,Wine
-run_2_repetition_0,DONE,LR,skl_cpu,breast_cancer,569,30,26.38861083984375,41.98458342892783,,,1.0017585,10909315072,0.973684,Breast Cancer
-run_3_repetition_0,DONE,LR,skl_cpu,digits,360,64,19.91973876953125,32.73482221364975,,,0.80175644,10907348992,1.0,Digits
+run_0_repetition_0,DONE,LR,skl_cpu,iris,100,4,21.43249511718932,27.068390956946782,,,1.0016758,10389049344,1.0,Iris
+run_1_repetition_0,TODO,LR,skl_cpu,wine, , , , , , , , , ,
+run_2_repetition_0,TODO,LR,skl_cpu,breast_cancer, , , , , , , , , ,
+run_3_repetition_0,TODO,LR,skl_cpu,digits, , , , , , , , , ,
 run_4_repetition_0,TODO,LR,intelex_cpu,iris, , , , , , , , , ,
 run_5_repetition_0,TODO,LR,intelex_cpu,wine, , , , , , , , , ,
 run_6_repetition_0,TODO,LR,intelex_cpu,breast_cancer, , , , , , , , , ,
@@ -19,14 +19,14 @@ run_16_repetition_0,TODO,LR,tf_gpu,iris, , , , , , , , , ,
 run_17_repetition_0,TODO,LR,tf_gpu,wine, , , , , , , , , ,
 run_18_repetition_0,TODO,LR,tf_gpu,breast_cancer, , , , , , , , , ,
 run_19_repetition_0,TODO,LR,tf_gpu,digits, , , , , , , , , ,
-run_20_repetition_0,DONE,LR,trh_gpu,iris,100,4,48.03082275390625,17.26259158452352,,,2.6036525,11433455616,1.0,Iris
-run_21_repetition_0,DONE,LR,trh_gpu,wine,130,13,49.81787109375,14.916061850388845,,,2.6028838,11434598400,1.0,Wine
-run_22_repetition_0,DONE,LR,trh_gpu,breast_cancer,569,30,49.2423095703125,20.585333482424417,,,2.6026697,11434459136,0.982456,Breast Cancer
-run_23_repetition_0,DONE,LR,trh_gpu,digits,360,64,48.77423095703125,17.928092988332114,,,2.6036513,11435798528,1.0,Digits
-run_24_repetition_0,DONE,RR,skl_cpu,iris,100,4,16.6038818359375,23.20188993215561,,,0.80190295,11131731968,0.0,Iris
-run_25_repetition_0,DONE,RR,skl_cpu,wine,130,13,17.2147216796875,24.891721963882446,,,0.80144554,11134107648,0.0,Wine
-run_26_repetition_0,DONE,RR,skl_cpu,breast_cancer,569,30,17.11383056640625,24.03043296933174,,,0.80140173,11143020544,0.0,Breast Cancer
-run_27_repetition_0,DONE,RR,skl_cpu,digits,360,64,23.53076171875,37.90588273320879,,,1.0009443,11155021824,0.0,Digits
+run_20_repetition_0,TODO,LR,trh_gpu,iris, , , , , , , , , ,
+run_21_repetition_0,TODO,LR,trh_gpu,wine, , , , , , , , , ,
+run_22_repetition_0,TODO,LR,trh_gpu,breast_cancer, , , , , , , , , ,
+run_23_repetition_0,TODO,LR,trh_gpu,digits, , , , , , , , , ,
+run_24_repetition_0,TODO,RR,skl_cpu,iris, , , , , , , , , ,
+run_25_repetition_0,TODO,RR,skl_cpu,wine, , , , , , , , , ,
+run_26_repetition_0,TODO,RR,skl_cpu,breast_cancer, , , , , , , , , ,
+run_27_repetition_0,TODO,RR,skl_cpu,digits, , , , , , , , , ,
 run_28_repetition_0,TODO,RR,intelex_cpu,iris, , , , , , , , , ,
 run_29_repetition_0,TODO,RR,intelex_cpu,wine, , , , , , , , , ,
 run_30_repetition_0,TODO,RR,intelex_cpu,breast_cancer, , , , , , , , , ,
@@ -43,14 +43,14 @@ run_40_repetition_0,TODO,RR,tf_gpu,iris, , , , , , , , , ,
 run_41_repetition_0,TODO,RR,tf_gpu,wine, , , , , , , , , ,
 run_42_repetition_0,TODO,RR,tf_gpu,breast_cancer, , , , , , , , , ,
 run_43_repetition_0,TODO,RR,tf_gpu,digits, , , , , , , , , ,
-run_44_repetition_0,DONE,RR,trh_gpu,iris,100,4,84.15850830078125,28.969229566423518,,,3.4023488,11871846400,0.0,Iris
-run_45_repetition_0,DONE,RR,trh_gpu,wine,130,13,80.130859375,29.267395893732708,,,3.2018378,11867058176,0.0,Wine
-run_46_repetition_0,DONE,RR,trh_gpu,breast_cancer,569,30,79.34942626953125,26.38795680748789,,,3.4028711,11888037888,0.0,Breast Cancer
-run_47_repetition_0,DONE,RR,trh_gpu,digits,360,64,72.08642578125,23.704879478404397,,,3.402614,11897614336,0.0,Digits
-run_48_repetition_0,DONE,DT,skl_cpu,iris,100,4,18.69854736328125,27.092681974172592,,,0.80094326,11270721536,1.0,Iris
-run_49_repetition_0,DONE,DT,skl_cpu,wine,130,13,22.0794677734375,29.252383189541952,,,1.0011545,11320856576,0.923077,Wine
-run_50_repetition_0,DONE,DT,skl_cpu,breast_cancer,569,30,17.6304931640625,29.583699107170105,,,0.8017507,11312418816,0.912281,Breast Cancer
-run_51_repetition_0,DONE,DT,skl_cpu,digits,360,64,17.990722656253638,30.59051199754079,,,0.800986,11312017408,0.972222,Digits
+run_44_repetition_0,TODO,RR,trh_gpu,iris, , , , , , , , , ,
+run_45_repetition_0,TODO,RR,trh_gpu,wine, , , , , , , , , ,
+run_46_repetition_0,TODO,RR,trh_gpu,breast_cancer, , , , , , , , , ,
+run_47_repetition_0,TODO,RR,trh_gpu,digits, , , , , , , , , ,
+run_48_repetition_0,TODO,DT,skl_cpu,iris, , , , , , , , , ,
+run_49_repetition_0,TODO,DT,skl_cpu,wine, , , , , , , , , ,
+run_50_repetition_0,TODO,DT,skl_cpu,breast_cancer, , , , , , , , , ,
+run_51_repetition_0,TODO,DT,skl_cpu,digits, , , , , , , , , ,
 run_52_repetition_0,TODO,DT,intelex_cpu,iris, , , , , , , , , ,
 run_53_repetition_0,TODO,DT,intelex_cpu,wine, , , , , , , , , ,
 run_54_repetition_0,TODO,DT,intelex_cpu,breast_cancer, , , , , , , , , ,
@@ -71,14 +71,14 @@ run_68_repetition_0,TODO,DT,trh_gpu,iris, , , , , , , , , ,
 run_69_repetition_0,TODO,DT,trh_gpu,wine, , , , , , , , , ,
 run_70_repetition_0,TODO,DT,trh_gpu,breast_cancer, , , , , , , , , ,
 run_71_repetition_0,TODO,DT,trh_gpu,digits, , , , , , , , , ,
-run_72_repetition_0,DONE,KMeans,skl_cpu,iris,100,4,16.97247314453125,24.48785275220871,,,0.8014933,11224899584,1.0,Iris
-run_73_repetition_0,DONE,KMeans,skl_cpu,wine,130,13,17.052795410159888,23.858792235453922,,,0.8014155,11215011840,0.938462,Wine
-run_74_repetition_0,DONE,KMeans,skl_cpu,breast_cancer,569,30,16.81292724609375,24.477521936098736,,,0.80167073,11211362304,0.905097,Breast Cancer
-run_75_repetition_0,DONE,KMeans,skl_cpu,digits,360,64,16.86126708984375,25.384441951910656,,,0.8015325,11213012992,0.994444,Digits
-run_76_repetition_0,DONE,KMeans,intelex_cpu,iris,100,4,16.9781494140625,24.378512223561604,,,0.80158967,11213701120,1.0,Iris
-run_77_repetition_0,DONE,KMeans,intelex_cpu,wine,130,13,18.805786132816138,31.980337291955948,,,0.80116034,11217977344,0.938462,Wine
-run_78_repetition_0,DONE,KMeans,intelex_cpu,breast_cancer,569,30,24.874267578125,36.562753677368164,,,1.0014545,11235545088,0.905097,Breast Cancer
-run_79_repetition_0,DONE,KMeans,intelex_cpu,digits,360,64,20.3902587890625,29.97779815537589,,,1.0013584,10776317952,0.994444,Digits
+run_72_repetition_0,TODO,KMeans,skl_cpu,iris, , , , , , , , , ,
+run_73_repetition_0,TODO,KMeans,skl_cpu,wine, , , , , , , , , ,
+run_74_repetition_0,TODO,KMeans,skl_cpu,breast_cancer, , , , , , , , , ,
+run_75_repetition_0,TODO,KMeans,skl_cpu,digits, , , , , , , , , ,
+run_76_repetition_0,TODO,KMeans,intelex_cpu,iris, , , , , , , , , ,
+run_77_repetition_0,TODO,KMeans,intelex_cpu,wine, , , , , , , , , ,
+run_78_repetition_0,TODO,KMeans,intelex_cpu,breast_cancer, , , , , , , , , ,
+run_79_repetition_0,TODO,KMeans,intelex_cpu,digits, , , , , , , , , ,
 run_80_repetition_0,TODO,KMeans,xgb_cpu,iris, , , , , , , , , ,
 run_81_repetition_0,TODO,KMeans,xgb_cpu,wine, , , , , , , , , ,
 run_82_repetition_0,TODO,KMeans,xgb_cpu,breast_cancer, , , , , , , , , ,
@@ -95,10 +95,10 @@ run_92_repetition_0,TODO,KMeans,trh_gpu,iris, , , , , , , , , ,
 run_93_repetition_0,TODO,KMeans,trh_gpu,wine, , , , , , , , , ,
 run_94_repetition_0,TODO,KMeans,trh_gpu,breast_cancer, , , , , , , , , ,
 run_95_repetition_0,TODO,KMeans,trh_gpu,digits, , , , , , , , , ,
-run_0_repetition_1,DONE,LR,skl_cpu,iris,100,4,19.39251708984375,36.253580351670585,,,0.80115986,10830417920,1.0,Iris
-run_1_repetition_1,DONE,LR,skl_cpu,wine,130,13,19.244140625,33.02804350852966,,,0.8014657,10791161856,1.0,Wine
-run_2_repetition_1,DONE,LR,skl_cpu,breast_cancer,569,30,19.516052246090112,39.3954861164093,,,0.8016938,10833690624,0.973684,Breast Cancer
-run_3_repetition_1,DONE,LR,skl_cpu,digits,360,64,19.964416503902612,34.75786737600962,,,0.8011788,10787479552,1.0,Digits
+run_0_repetition_1,TODO,LR,skl_cpu,iris, , , , , , , , , ,
+run_1_repetition_1,TODO,LR,skl_cpu,wine, , , , , , , , , ,
+run_2_repetition_1,TODO,LR,skl_cpu,breast_cancer, , , , , , , , , ,
+run_3_repetition_1,TODO,LR,skl_cpu,digits, , , , , , , , , ,
 run_4_repetition_1,TODO,LR,intelex_cpu,iris, , , , , , , , , ,
 run_5_repetition_1,TODO,LR,intelex_cpu,wine, , , , , , , , , ,
 run_6_repetition_1,TODO,LR,intelex_cpu,breast_cancer, , , , , , , , , ,
@@ -115,14 +115,14 @@ run_16_repetition_1,TODO,LR,tf_gpu,iris, , , , , , , , , ,
 run_17_repetition_1,TODO,LR,tf_gpu,wine, , , , , , , , , ,
 run_18_repetition_1,TODO,LR,tf_gpu,breast_cancer, , , , , , , , , ,
 run_19_repetition_1,TODO,LR,tf_gpu,digits, , , , , , , , , ,
-run_20_repetition_1,DONE,LR,trh_gpu,iris,100,4,50.01104736328489,18.65348792076111,,,2.6020327,11102093312,1.0,Iris
-run_21_repetition_1,DONE,LR,trh_gpu,wine,130,13,49.493408203125,18.96388475894928,,,2.6029449,11103850496,0.923077,Wine
-run_22_repetition_1,DONE,LR,trh_gpu,breast_cancer,569,30,49.21697998046875,18.40904534657796,,,2.602398,11103617024,0.973684,Breast Cancer
-run_23_repetition_1,DONE,LR,trh_gpu,digits,360,64,50.04211425781614,19.141773637135824,,,2.6024327,11103973376,1.0,Digits
-run_24_repetition_1,DONE,RR,skl_cpu,iris,100,4,16.91412353515625,25.752772480249405,,,0.80164534,10799034368,0.0,Iris
-run_25_repetition_1,DONE,RR,skl_cpu,wine,130,13,16.9251708984375,24.925428072611492,,,0.80192566,10798809088,0.0,Wine
-run_26_repetition_1,DONE,RR,skl_cpu,breast_cancer,569,30,16.934082031246362,24.498294522364933,,,0.8013421,10793824256,0.0,Breast Cancer
-run_27_repetition_1,DONE,RR,skl_cpu,digits,360,64,17.02545166015625,24.983182032903034,,,0.8014589,10796314624,0.0,Digits
+run_20_repetition_1,TODO,LR,trh_gpu,iris, , , , , , , , , ,
+run_21_repetition_1,TODO,LR,trh_gpu,wine, , , , , , , , , ,
+run_22_repetition_1,TODO,LR,trh_gpu,breast_cancer, , , , , , , , , ,
+run_23_repetition_1,TODO,LR,trh_gpu,digits, , , , , , , , , ,
+run_24_repetition_1,TODO,RR,skl_cpu,iris, , , , , , , , , ,
+run_25_repetition_1,TODO,RR,skl_cpu,wine, , , , , , , , , ,
+run_26_repetition_1,TODO,RR,skl_cpu,breast_cancer, , , , , , , , , ,
+run_27_repetition_1,TODO,RR,skl_cpu,digits, , , , , , , , , ,
 run_28_repetition_1,TODO,RR,intelex_cpu,iris, , , , , , , , , ,
 run_29_repetition_1,TODO,RR,intelex_cpu,wine, , , , , , , , , ,
 run_30_repetition_1,TODO,RR,intelex_cpu,breast_cancer, , , , , , , , , ,
@@ -139,14 +139,14 @@ run_40_repetition_1,TODO,RR,tf_gpu,iris, , , , , , , , , ,
 run_41_repetition_1,TODO,RR,tf_gpu,wine, , , , , , , , , ,
 run_42_repetition_1,TODO,RR,tf_gpu,breast_cancer, , , , , , , , , ,
 run_43_repetition_1,TODO,RR,tf_gpu,digits, , , , , , , , , ,
-run_44_repetition_1,DONE,RR,trh_gpu,iris,100,4,56.96728515624636,18.328234055463007,,,3.0023131,11393110016,0.0,Iris
-run_45_repetition_1,DONE,RR,trh_gpu,wine,130,13,57.7325439453125,18.175555074916165,,,3.0022242,11395198976,0.0,Wine
-run_46_repetition_1,DONE,RR,trh_gpu,breast_cancer,569,30,57.99102783203125,20.562128919012405,,,3.002967,11408666624,0.0,Breast Cancer
-run_47_repetition_1,DONE,RR,trh_gpu,digits,360,64,57.89361572265989,18.171223458121805,,,3.0029387,11405950976,0.0,Digits
-run_48_repetition_1,DONE,DT,skl_cpu,iris,100,4,17.44244384765625,25.030662447214127,,,0.80137664,10805829632,1.0,Iris
-run_49_repetition_1,DONE,DT,skl_cpu,wine,130,13,17.3170166015625,25.370883345603943,,,0.801493,10805780480,0.923077,Wine
-run_50_repetition_1,DONE,DT,skl_cpu,breast_cancer,569,30,17.47308349609375,25.162641038497288,,,0.8013857,10809532416,0.912281,Breast Cancer
-run_51_repetition_1,DONE,DT,skl_cpu,digits,360,64,17.58282470703125,25.977393329143524,,,0.8016349,10809569280,0.972222,Digits
+run_44_repetition_1,TODO,RR,trh_gpu,iris, , , , , , , , , ,
+run_45_repetition_1,TODO,RR,trh_gpu,wine, , , , , , , , , ,
+run_46_repetition_1,TODO,RR,trh_gpu,breast_cancer, , , , , , , , , ,
+run_47_repetition_1,TODO,RR,trh_gpu,digits, , , , , , , , , ,
+run_48_repetition_1,TODO,DT,skl_cpu,iris, , , , , , , , , ,
+run_49_repetition_1,TODO,DT,skl_cpu,wine, , , , , , , , , ,
+run_50_repetition_1,TODO,DT,skl_cpu,breast_cancer, , , , , , , , , ,
+run_51_repetition_1,TODO,DT,skl_cpu,digits, , , , , , , , , ,
 run_52_repetition_1,TODO,DT,intelex_cpu,iris, , , , , , , , , ,
 run_53_repetition_1,TODO,DT,intelex_cpu,wine, , , , , , , , , ,
 run_54_repetition_1,TODO,DT,intelex_cpu,breast_cancer, , , , , , , , , ,
@@ -167,14 +167,14 @@ run_68_repetition_1,TODO,DT,trh_gpu,iris, , , , , , , , , ,
 run_69_repetition_1,TODO,DT,trh_gpu,wine, , , , , , , , , ,
 run_70_repetition_1,TODO,DT,trh_gpu,breast_cancer, , , , , , , , , ,
 run_71_repetition_1,TODO,DT,trh_gpu,digits, , , , , , , , , ,
-run_72_repetition_1,DONE,KMeans,skl_cpu,iris,100,4,20.7127685546875,25.274906967367446,,,1.0015072,10883719168,1.0,Iris
-run_73_repetition_1,DONE,KMeans,skl_cpu,wine,130,13,17.3060302734375,25.919902821381886,,,0.80109817,10894938112,0.938462,Wine
-run_74_repetition_1,DONE,KMeans,skl_cpu,breast_cancer,569,30,17.544189453125,25.547118584314983,,,0.8020264,10855600128,0.905097,Breast Cancer
-run_75_repetition_1,DONE,KMeans,skl_cpu,digits,360,64,17.61907958984375,28.745575437943142,,,0.80112547,10859081728,0.994444,Digits
-run_76_repetition_1,DONE,KMeans,intelex_cpu,iris,100,4,17.551452636722388,25.444018572568893,,,0.8012601,10855882752,1.0,Iris
-run_77_repetition_1,DONE,KMeans,intelex_cpu,wine,130,13,17.6072998046875,25.075776745875675,,,0.8012135,10857828352,0.938462,Wine
-run_78_repetition_1,DONE,KMeans,intelex_cpu,breast_cancer,569,30,17.650390625,25.312880724668503,,,0.8020045,10858336256,0.905097,Breast Cancer
-run_79_repetition_1,DONE,KMeans,intelex_cpu,digits,360,64,17.656860351566138,25.983095943927765,,,0.8013239,10859618304,0.994444,Digits
+run_72_repetition_1,TODO,KMeans,skl_cpu,iris, , , , , , , , , ,
+run_73_repetition_1,TODO,KMeans,skl_cpu,wine, , , , , , , , , ,
+run_74_repetition_1,TODO,KMeans,skl_cpu,breast_cancer, , , , , , , , , ,
+run_75_repetition_1,TODO,KMeans,skl_cpu,digits, , , , , , , , , ,
+run_76_repetition_1,TODO,KMeans,intelex_cpu,iris, , , , , , , , , ,
+run_77_repetition_1,TODO,KMeans,intelex_cpu,wine, , , , , , , , , ,
+run_78_repetition_1,TODO,KMeans,intelex_cpu,breast_cancer, , , , , , , , , ,
+run_79_repetition_1,TODO,KMeans,intelex_cpu,digits, , , , , , , , , ,
 run_80_repetition_1,TODO,KMeans,xgb_cpu,iris, , , , , , , , , ,
 run_81_repetition_1,TODO,KMeans,xgb_cpu,wine, , , , , , , , , ,
 run_82_repetition_1,TODO,KMeans,xgb_cpu,breast_cancer, , , , , , , , , ,
@@ -191,10 +191,10 @@ run_92_repetition_1,TODO,KMeans,trh_gpu,iris, , , , , , , , , ,
 run_93_repetition_1,TODO,KMeans,trh_gpu,wine, , , , , , , , , ,
 run_94_repetition_1,TODO,KMeans,trh_gpu,breast_cancer, , , , , , , , , ,
 run_95_repetition_1,TODO,KMeans,trh_gpu,digits, , , , , , , , , ,
-run_0_repetition_2,DONE,LR,skl_cpu,iris,100,4,18.663330078125,32.270286371310554,,,0.8019295,10856538112,1.0,Iris
-run_1_repetition_2,DONE,LR,skl_cpu,wine,130,13,18.71966552734375,31.893584062655766,,,0.8013798,10851733504,1.0,Wine
-run_2_repetition_2,DONE,LR,skl_cpu,breast_cancer,569,30,19.04119873046875,32.096389849980675,,,0.80129087,10851438592,0.973684,Breast Cancer
-run_3_repetition_2,DONE,LR,skl_cpu,digits,360,64,20.332763671878638,36.962041099866234,,,0.8009747,10858405888,1.0,Digits
+run_0_repetition_2,TODO,LR,skl_cpu,iris, , , , , , , , , ,
+run_1_repetition_2,TODO,LR,skl_cpu,wine, , , , , , , , , ,
+run_2_repetition_2,TODO,LR,skl_cpu,breast_cancer, , , , , , , , , ,
+run_3_repetition_2,TODO,LR,skl_cpu,digits, , , , , , , , , ,
 run_4_repetition_2,TODO,LR,intelex_cpu,iris, , , , , , , , , ,
 run_5_repetition_2,TODO,LR,intelex_cpu,wine, , , , , , , , , ,
 run_6_repetition_2,TODO,LR,intelex_cpu,breast_cancer, , , , , , , , , ,
@@ -211,14 +211,14 @@ run_16_repetition_2,TODO,LR,tf_gpu,iris, , , , , , , , , ,
 run_17_repetition_2,TODO,LR,tf_gpu,wine, , , , , , , , , ,
 run_18_repetition_2,TODO,LR,tf_gpu,breast_cancer, , , , , , , , , ,
 run_19_repetition_2,TODO,LR,tf_gpu,digits, , , , , , , , , ,
-run_20_repetition_2,DONE,LR,trh_gpu,iris,100,4,54.86938476562136,21.43821458891034,,,2.8021986,11412598784,1.0,Iris
-run_21_repetition_2,DONE,LR,trh_gpu,wine,130,13,50.319091796875,22.566918448607126,,,2.6026285,11387953152,0.923077,Wine
-run_22_repetition_2,DONE,LR,trh_gpu,breast_cancer,569,30,54.56494140625,20.327986106276512,,,2.802291,11425140736,0.973684,Breast Cancer
-run_23_repetition_2,DONE,LR,trh_gpu,digits,360,64,57.2672119140625,23.71598305553198,,,2.8019934,11414306816,1.0,Digits
-run_24_repetition_2,DONE,RR,skl_cpu,iris,100,4,18.359741210944776,28.353346407413483,,,0.801657,11095072768,0.0,Iris
-run_25_repetition_2,DONE,RR,skl_cpu,wine,130,13,18.481872558590112,27.536824971437454,,,0.80196047,11104116736,0.0,Wine
-run_26_repetition_2,DONE,RR,skl_cpu,breast_cancer,569,30,18.37835693359375,27.791358023881912,,,0.8012899,11106222080,0.0,Breast Cancer
-run_27_repetition_2,DONE,RR,skl_cpu,digits,360,64,17.519775390625,25.518618047237396,,,0.8013485,11116167168,0.0,Digits
+run_20_repetition_2,TODO,LR,trh_gpu,iris, , , , , , , , , ,
+run_21_repetition_2,TODO,LR,trh_gpu,wine, , , , , , , , , ,
+run_22_repetition_2,TODO,LR,trh_gpu,breast_cancer, , , , , , , , , ,
+run_23_repetition_2,TODO,LR,trh_gpu,digits, , , , , , , , , ,
+run_24_repetition_2,TODO,RR,skl_cpu,iris, , , , , , , , , ,
+run_25_repetition_2,TODO,RR,skl_cpu,wine, , , , , , , , , ,
+run_26_repetition_2,TODO,RR,skl_cpu,breast_cancer, , , , , , , , , ,
+run_27_repetition_2,TODO,RR,skl_cpu,digits, , , , , , , , , ,
 run_28_repetition_2,TODO,RR,intelex_cpu,iris, , , , , , , , , ,
 run_29_repetition_2,TODO,RR,intelex_cpu,wine, , , , , , , , , ,
 run_30_repetition_2,TODO,RR,intelex_cpu,breast_cancer, , , , , , , , , ,
@@ -235,14 +235,14 @@ run_40_repetition_2,TODO,RR,tf_gpu,iris, , , , , , , , , ,
 run_41_repetition_2,TODO,RR,tf_gpu,wine, , , , , , , , , ,
 run_42_repetition_2,TODO,RR,tf_gpu,breast_cancer, , , , , , , , , ,
 run_43_repetition_2,TODO,RR,tf_gpu,digits, , , , , , , , , ,
-run_44_repetition_2,DONE,RR,trh_gpu,iris,100,4,56.97894287109375,17.81117636315963,,,3.0021574,11652313088,0.0,Iris
-run_45_repetition_2,DONE,RR,trh_gpu,wine,130,13,57.98614501953125,18.52417260759017,,,3.002558,11663364096,0.0,Wine
-run_46_repetition_2,DONE,RR,trh_gpu,breast_cancer,569,30,60.041015625,25.26838330836857,,,3.0018907,11683459072,0.0,Breast Cancer
-run_47_repetition_2,DONE,RR,trh_gpu,digits,360,64,65.14605712890625,20.69822845194075,,,3.2025495,11714220032,0.0,Digits
-run_48_repetition_2,DONE,DT,skl_cpu,iris,100,4,25.26763916015625,37.662310004234314,,,1.0011492,11159453696,1.0,Iris
-run_49_repetition_2,DONE,DT,skl_cpu,wine,130,13,21.17523193359375,30.039167055061885,,,1.00157,11171270656,0.923077,Wine
-run_50_repetition_2,DONE,DT,skl_cpu,breast_cancer,569,30,21.343322753909888,29.476283414023264,,,1.0012301,11177967616,0.912281,Breast Cancer
-run_51_repetition_2,DONE,DT,skl_cpu,digits,360,64,21.253662109371362,30.731772712298802,,,1.0011681,11157684224,0.972222,Digits
+run_44_repetition_2,TODO,RR,trh_gpu,iris, , , , , , , , , ,
+run_45_repetition_2,TODO,RR,trh_gpu,wine, , , , , , , , , ,
+run_46_repetition_2,TODO,RR,trh_gpu,breast_cancer, , , , , , , , , ,
+run_47_repetition_2,TODO,RR,trh_gpu,digits, , , , , , , , , ,
+run_48_repetition_2,TODO,DT,skl_cpu,iris, , , , , , , , , ,
+run_49_repetition_2,TODO,DT,skl_cpu,wine, , , , , , , , , ,
+run_50_repetition_2,TODO,DT,skl_cpu,breast_cancer, , , , , , , , , ,
+run_51_repetition_2,TODO,DT,skl_cpu,digits, , , , , , , , , ,
 run_52_repetition_2,TODO,DT,intelex_cpu,iris, , , , , , , , , ,
 run_53_repetition_2,TODO,DT,intelex_cpu,wine, , , , , , , , , ,
 run_54_repetition_2,TODO,DT,intelex_cpu,breast_cancer, , , , , , , , , ,
@@ -263,14 +263,14 @@ run_68_repetition_2,TODO,DT,trh_gpu,iris, , , , , , , , , ,
 run_69_repetition_2,TODO,DT,trh_gpu,wine, , , , , , , , , ,
 run_70_repetition_2,TODO,DT,trh_gpu,breast_cancer, , , , , , , , , ,
 run_71_repetition_2,TODO,DT,trh_gpu,digits, , , , , , , , , ,
-run_72_repetition_2,DONE,KMeans,skl_cpu,iris,100,4,22.75732421875,32.57441374233791,,,1.0021931,11248025600,1.0,Iris
-run_73_repetition_2,DONE,KMeans,skl_cpu,wine,130,13,20.256225585933862,25.08386513165065,,,1.0023167,11187924992,0.938462,Wine
-run_74_repetition_2,DONE,KMeans,skl_cpu,breast_cancer,569,30,23.64697265625,33.10073859351022,,,1.0011511,11174875136,0.905097,Breast Cancer
-run_75_repetition_2,DONE,KMeans,skl_cpu,digits,360,64,18.35040283203125,30.31025618314743,,,0.80120593,11135492096,0.994444,Digits
-run_76_repetition_2,DONE,KMeans,intelex_cpu,iris,100,4,19.794494628902612,26.392126866749354,,,1.0013757,11139891200,1.0,Iris
-run_77_repetition_2,DONE,KMeans,intelex_cpu,wine,130,13,22.414245605472388,30.945395401545934,,,1.0015229,11127562240,0.938462,Wine
-run_78_repetition_2,DONE,KMeans,intelex_cpu,breast_cancer,569,30,20.444580078121362,26.994195376123702,,,1.0013888,11134251008,0.905097,Breast Cancer
-run_79_repetition_2,DONE,KMeans,intelex_cpu,digits,360,64,20.497863769527612,25.110154007162368,,,1.0016565,11057078272,0.994444,Digits
+run_72_repetition_2,TODO,KMeans,skl_cpu,iris, , , , , , , , , ,
+run_73_repetition_2,TODO,KMeans,skl_cpu,wine, , , , , , , , , ,
+run_74_repetition_2,TODO,KMeans,skl_cpu,breast_cancer, , , , , , , , , ,
+run_75_repetition_2,TODO,KMeans,skl_cpu,digits, , , , , , , , , ,
+run_76_repetition_2,TODO,KMeans,intelex_cpu,iris, , , , , , , , , ,
+run_77_repetition_2,TODO,KMeans,intelex_cpu,wine, , , , , , , , , ,
+run_78_repetition_2,TODO,KMeans,intelex_cpu,breast_cancer, , , , , , , , , ,
+run_79_repetition_2,TODO,KMeans,intelex_cpu,digits, , , , , , , , , ,
 run_80_repetition_2,TODO,KMeans,xgb_cpu,iris, , , , , , , , , ,
 run_81_repetition_2,TODO,KMeans,xgb_cpu,wine, , , , , , , , , ,
 run_82_repetition_2,TODO,KMeans,xgb_cpu,breast_cancer, , , , , , , , , ,
@@ -287,10 +287,10 @@ run_92_repetition_2,TODO,KMeans,trh_gpu,iris, , , , , , , , , ,
 run_93_repetition_2,TODO,KMeans,trh_gpu,wine, , , , , , , , , ,
 run_94_repetition_2,TODO,KMeans,trh_gpu,breast_cancer, , , , , , , , , ,
 run_95_repetition_2,TODO,KMeans,trh_gpu,digits, , , , , , , , , ,
-run_0_repetition_3,DONE,LR,skl_cpu,iris,100,4,18.60296630859375,31.71887860695521,,,0.80183,11012505600,1.0,Iris
-run_1_repetition_3,DONE,LR,skl_cpu,wine,130,13,18.739257812503638,30.721216191848118,,,0.8016056,11013062656,1.0,Wine
-run_2_repetition_3,DONE,LR,skl_cpu,breast_cancer,569,30,18.551452636722388,31.211845527092617,,,0.8014597,11011739648,0.973684,Breast Cancer
-run_3_repetition_3,DONE,LR,skl_cpu,digits,360,64,18.601806640621362,31.334913273652393,,,0.80164284,11016540160,1.0,Digits
+run_0_repetition_3,TODO,LR,skl_cpu,iris, , , , , , , , , ,
+run_1_repetition_3,TODO,LR,skl_cpu,wine, , , , , , , , , ,
+run_2_repetition_3,TODO,LR,skl_cpu,breast_cancer, , , , , , , , , ,
+run_3_repetition_3,TODO,LR,skl_cpu,digits, , , , , , , , , ,
 run_4_repetition_3,TODO,LR,intelex_cpu,iris, , , , , , , , , ,
 run_5_repetition_3,TODO,LR,intelex_cpu,wine, , , , , , , , , ,
 run_6_repetition_3,TODO,LR,intelex_cpu,breast_cancer, , , , , , , , , ,
@@ -307,14 +307,14 @@ run_16_repetition_3,TODO,LR,tf_gpu,iris, , , , , , , , , ,
 run_17_repetition_3,TODO,LR,tf_gpu,wine, , , , , , , , , ,
 run_18_repetition_3,TODO,LR,tf_gpu,breast_cancer, , , , , , , , , ,
 run_19_repetition_3,TODO,LR,tf_gpu,digits, , , , , , , , , ,
-run_20_repetition_3,DONE,LR,trh_gpu,iris,100,4,49.51226806640625,20.70218633810679,,,2.6019301,11411591168,1.0,Iris
-run_21_repetition_3,DONE,LR,trh_gpu,wine,130,13,52.9666748046875,20.89931184798479,,,2.8024745,11403436032,1.0,Wine
-run_22_repetition_3,DONE,LR,trh_gpu,breast_cancer,569,30,49.972412109375,18.386965922514598,,,2.6023257,11407208448,0.95614,Breast Cancer
-run_23_repetition_3,DONE,LR,trh_gpu,digits,360,64,49.306884765625,18.608786046504974,,,2.6025834,11411849216,1.0,Digits
-run_24_repetition_3,DONE,RR,skl_cpu,iris,100,4,16.632324218753638,24.87462079524994,,,0.80200094,11101093888,0.0,Iris
-run_25_repetition_3,DONE,RR,skl_cpu,wine,130,13,17.00335693359375,25.692694942156475,,,0.8014745,11087589376,0.0,Wine
-run_26_repetition_3,DONE,RR,skl_cpu,breast_cancer,569,30,16.99603271484375,24.304648458957672,,,0.80162144,11086438400,0.0,Breast Cancer
-run_27_repetition_3,DONE,RR,skl_cpu,digits,360,64,17.4261474609375,26.863808850447338,,,0.8014235,11096084480,0.0,Digits
+run_20_repetition_3,TODO,LR,trh_gpu,iris, , , , , , , , , ,
+run_21_repetition_3,TODO,LR,trh_gpu,wine, , , , , , , , , ,
+run_22_repetition_3,TODO,LR,trh_gpu,breast_cancer, , , , , , , , , ,
+run_23_repetition_3,TODO,LR,trh_gpu,digits, , , , , , , , , ,
+run_24_repetition_3,TODO,RR,skl_cpu,iris, , , , , , , , , ,
+run_25_repetition_3,TODO,RR,skl_cpu,wine, , , , , , , , , ,
+run_26_repetition_3,TODO,RR,skl_cpu,breast_cancer, , , , , , , , , ,
+run_27_repetition_3,TODO,RR,skl_cpu,digits, , , , , , , , , ,
 run_28_repetition_3,TODO,RR,intelex_cpu,iris, , , , , , , , , ,
 run_29_repetition_3,TODO,RR,intelex_cpu,wine, , , , , , , , , ,
 run_30_repetition_3,TODO,RR,intelex_cpu,breast_cancer, , , , , , , , , ,
@@ -331,14 +331,14 @@ run_40_repetition_3,TODO,RR,tf_gpu,iris, , , , , , , , , ,
 run_41_repetition_3,TODO,RR,tf_gpu,wine, , , , , , , , , ,
 run_42_repetition_3,TODO,RR,tf_gpu,breast_cancer, , , , , , , , , ,
 run_43_repetition_3,TODO,RR,tf_gpu,digits, , , , , , , , , ,
-run_44_repetition_3,DONE,RR,trh_gpu,iris,100,4,56.5345458984375,17.92663286713993,,,3.002644,11692728320,0.0,Iris
-run_45_repetition_3,DONE,RR,trh_gpu,wine,130,13,57.16461181640625,19.50489373768077,,,3.0035942,11689615360,0.0,Wine
-run_46_repetition_3,DONE,RR,trh_gpu,breast_cancer,569,30,63.18536376953125,23.23112605015437,,,3.203121,11725516800,0.0,Breast Cancer
-run_47_repetition_3,DONE,RR,trh_gpu,digits,360,64,71.10723876953125,25.594567615734903,,,3.402326,11762499584,0.0,Digits
-run_48_repetition_3,DONE,DT,skl_cpu,iris,100,4,17.97314453125,26.797884047031403,,,0.8019235,11158601728,1.0,Iris
-run_49_repetition_3,DONE,DT,skl_cpu,wine,130,13,18.39801025390625,29.796240945657093,,,0.801517,11168808960,0.923077,Wine
-run_50_repetition_3,DONE,DT,skl_cpu,breast_cancer,569,30,21.1810302734375,31.917398691177368,,,1.0015587,11125891072,0.912281,Breast Cancer
-run_51_repetition_3,DONE,DT,skl_cpu,digits,360,64,18.1737060546875,33.0496971209844,,,0.8010694,11117125632,0.972222,Digits
+run_44_repetition_3,TODO,RR,trh_gpu,iris, , , , , , , , , ,
+run_45_repetition_3,TODO,RR,trh_gpu,wine, , , , , , , , , ,
+run_46_repetition_3,TODO,RR,trh_gpu,breast_cancer, , , , , , , , , ,
+run_47_repetition_3,TODO,RR,trh_gpu,digits, , , , , , , , , ,
+run_48_repetition_3,TODO,DT,skl_cpu,iris, , , , , , , , , ,
+run_49_repetition_3,TODO,DT,skl_cpu,wine, , , , , , , , , ,
+run_50_repetition_3,TODO,DT,skl_cpu,breast_cancer, , , , , , , , , ,
+run_51_repetition_3,TODO,DT,skl_cpu,digits, , , , , , , , , ,
 run_52_repetition_3,TODO,DT,intelex_cpu,iris, , , , , , , , , ,
 run_53_repetition_3,TODO,DT,intelex_cpu,wine, , , , , , , , , ,
 run_54_repetition_3,TODO,DT,intelex_cpu,breast_cancer, , , , , , , , , ,
@@ -359,14 +359,14 @@ run_68_repetition_3,TODO,DT,trh_gpu,iris, , , , , , , , , ,
 run_69_repetition_3,TODO,DT,trh_gpu,wine, , , , , , , , , ,
 run_70_repetition_3,TODO,DT,trh_gpu,breast_cancer, , , , , , , , , ,
 run_71_repetition_3,TODO,DT,trh_gpu,digits, , , , , , , , , ,
-run_72_repetition_3,DONE,KMeans,skl_cpu,iris,100,4,17.180908203125,25.694595019022625,,,0.80184215,10948042752,1.0,Iris
-run_73_repetition_3,DONE,KMeans,skl_cpu,wine,130,13,20.79266357421875,26.31128971491541,,,1.0017265,10941546496,0.938462,Wine
-run_74_repetition_3,DONE,KMeans,skl_cpu,breast_cancer,569,30,21.1993408203125,28.648606095995223,,,1.0016727,10989948928,0.905097,Breast Cancer
-run_75_repetition_3,DONE,KMeans,skl_cpu,digits,360,64,17.76708984375,26.349940081437428,,,0.8012238,10982002688,0.994444,Digits
-run_76_repetition_3,DONE,KMeans,intelex_cpu,iris,100,4,17.66375732421875,26.398038685321808,,,0.8014276,10974470144,1.0,Iris
-run_77_repetition_3,DONE,KMeans,intelex_cpu,wine,130,13,17.4437255859375,26.732113669315975,,,0.8010463,10963517440,0.938462,Wine
-run_78_repetition_3,DONE,KMeans,intelex_cpu,breast_cancer,569,30,17.45428466796875,26.71715810894966,,,0.8009755,10963120128,0.905097,Breast Cancer
-run_79_repetition_3,DONE,KMeans,intelex_cpu,digits,360,64,18.75286865234375,23.27185833454132,,,1.0017273,10966994944,0.994444,Digits
+run_72_repetition_3,TODO,KMeans,skl_cpu,iris, , , , , , , , , ,
+run_73_repetition_3,TODO,KMeans,skl_cpu,wine, , , , , , , , , ,
+run_74_repetition_3,TODO,KMeans,skl_cpu,breast_cancer, , , , , , , , , ,
+run_75_repetition_3,TODO,KMeans,skl_cpu,digits, , , , , , , , , ,
+run_76_repetition_3,TODO,KMeans,intelex_cpu,iris, , , , , , , , , ,
+run_77_repetition_3,TODO,KMeans,intelex_cpu,wine, , , , , , , , , ,
+run_78_repetition_3,TODO,KMeans,intelex_cpu,breast_cancer, , , , , , , , , ,
+run_79_repetition_3,TODO,KMeans,intelex_cpu,digits, , , , , , , , , ,
 run_80_repetition_3,TODO,KMeans,xgb_cpu,iris, , , , , , , , , ,
 run_81_repetition_3,TODO,KMeans,xgb_cpu,wine, , , , , , , , , ,
 run_82_repetition_3,TODO,KMeans,xgb_cpu,breast_cancer, , , , , , , , , ,
@@ -383,10 +383,10 @@ run_92_repetition_3,TODO,KMeans,trh_gpu,iris, , , , , , , , , ,
 run_93_repetition_3,TODO,KMeans,trh_gpu,wine, , , , , , , , , ,
 run_94_repetition_3,TODO,KMeans,trh_gpu,breast_cancer, , , , , , , , , ,
 run_95_repetition_3,TODO,KMeans,trh_gpu,digits, , , , , , , , , ,
-run_0_repetition_4,DONE,LR,skl_cpu,iris,100,4,18.96295166015625,31.651246825853985,,,0.8015921,10973450240,1.0,Iris
-run_1_repetition_4,DONE,LR,skl_cpu,wine,130,13,18.9678955078125,32.25611291329066,,,0.8014026,10962550784,1.0,Wine
-run_2_repetition_4,DONE,LR,skl_cpu,breast_cancer,569,30,19.1363525390625,31.912999431292217,,,0.80190974,10962857984,0.973684,Breast Cancer
-run_3_repetition_4,DONE,LR,skl_cpu,digits,360,64,19.0732421875,32.63592121998469,,,0.80197054,10974621696,1.0,Digits
+run_0_repetition_4,TODO,LR,skl_cpu,iris, , , , , , , , , ,
+run_1_repetition_4,TODO,LR,skl_cpu,wine, , , , , , , , , ,
+run_2_repetition_4,TODO,LR,skl_cpu,breast_cancer, , , , , , , , , ,
+run_3_repetition_4,TODO,LR,skl_cpu,digits, , , , , , , , , ,
 run_4_repetition_4,TODO,LR,intelex_cpu,iris, , , , , , , , , ,
 run_5_repetition_4,TODO,LR,intelex_cpu,wine, , , , , , , , , ,
 run_6_repetition_4,TODO,LR,intelex_cpu,breast_cancer, , , , , , , , , ,
@@ -403,14 +403,14 @@ run_16_repetition_4,TODO,LR,tf_gpu,iris, , , , , , , , , ,
 run_17_repetition_4,TODO,LR,tf_gpu,wine, , , , , , , , , ,
 run_18_repetition_4,TODO,LR,tf_gpu,breast_cancer, , , , , , , , , ,
 run_19_repetition_4,TODO,LR,tf_gpu,digits, , , , , , , , , ,
-run_20_repetition_4,DONE,LR,trh_gpu,iris,100,4,48.675476074211474,18.536289683977763,,,2.6023061,11275042816,1.0,Iris
-run_21_repetition_4,DONE,LR,trh_gpu,wine,130,13,49.22723388671875,18.65785530010859,,,2.6020527,11274899456,0.923077,Wine
-run_22_repetition_4,DONE,LR,trh_gpu,breast_cancer,569,30,49.63018798828125,18.918040585517883,,,2.6022472,11282276352,0.964912,Breast Cancer
-run_23_repetition_4,DONE,LR,trh_gpu,digits,360,64,50.1417236328125,19.635050209363303,,,2.601923,11273048064,1.0,Digits
-run_24_repetition_4,DONE,RR,skl_cpu,iris,100,4,17.3262939453125,26.05956795811653,,,0.8012819,10969542656,0.0,Iris
-run_25_repetition_4,DONE,RR,skl_cpu,wine,130,13,17.10284423828125,25.30690199136734,,,0.8016683,10964615168,0.0,Wine
-run_26_repetition_4,DONE,RR,skl_cpu,breast_cancer,569,30,16.90936279296875,25.39555428425471,,,0.8015102,10964058112,0.0,Breast Cancer
-run_27_repetition_4,DONE,RR,skl_cpu,digits,360,64,20.9403076171875,26.37207441670554,,,1.0011584,10992545792,0.0,Digits
+run_20_repetition_4,TODO,LR,trh_gpu,iris, , , , , , , , , ,
+run_21_repetition_4,TODO,LR,trh_gpu,wine, , , , , , , , , ,
+run_22_repetition_4,TODO,LR,trh_gpu,breast_cancer, , , , , , , , , ,
+run_23_repetition_4,TODO,LR,trh_gpu,digits, , , , , , , , , ,
+run_24_repetition_4,TODO,RR,skl_cpu,iris, , , , , , , , , ,
+run_25_repetition_4,TODO,RR,skl_cpu,wine, , , , , , , , , ,
+run_26_repetition_4,TODO,RR,skl_cpu,breast_cancer, , , , , , , , , ,
+run_27_repetition_4,TODO,RR,skl_cpu,digits, , , , , , , , , ,
 run_28_repetition_4,TODO,RR,intelex_cpu,iris, , , , , , , , , ,
 run_29_repetition_4,TODO,RR,intelex_cpu,wine, , , , , , , , , ,
 run_30_repetition_4,TODO,RR,intelex_cpu,breast_cancer, , , , , , , , , ,
@@ -427,14 +427,14 @@ run_40_repetition_4,TODO,RR,tf_gpu,iris, , , , , , , , , ,
 run_41_repetition_4,TODO,RR,tf_gpu,wine, , , , , , , , , ,
 run_42_repetition_4,TODO,RR,tf_gpu,breast_cancer, , , , , , , , , ,
 run_43_repetition_4,TODO,RR,tf_gpu,digits, , , , , , , , , ,
-run_44_repetition_4,DONE,RR,trh_gpu,iris,100,4,56.93768310546875,17.740590085001553,,,3.0024185,11678228480,0.0,Iris
-run_45_repetition_4,DONE,RR,trh_gpu,wine,130,13,57.29437255859375,17.908145816887128,,,3.0036814,11679080448,0.0,Wine
-run_46_repetition_4,DONE,RR,trh_gpu,breast_cancer,569,30,57.9229736328125,18.053399093010846,,,3.0028899,11694645248,0.0,Breast Cancer
-run_47_repetition_4,DONE,RR,trh_gpu,digits,360,64,58.09698486328125,17.57059219304253,,,3.0024636,11694219264,0.0,Digits
-run_48_repetition_4,DONE,DT,skl_cpu,iris,100,4,17.353271484375,30.480058203140896,,,0.80134577,11090190336,1.0,Iris
-run_49_repetition_4,DONE,DT,skl_cpu,wine,130,13,17.255004882805224,24.48564523458481,,,0.8018734,11090358272,0.923077,Wine
-run_50_repetition_4,DONE,DT,skl_cpu,breast_cancer,569,30,16.99176025390625,25.50595564643542,,,0.80163014,11092889600,0.912281,Breast Cancer
-run_51_repetition_4,DONE,DT,skl_cpu,digits,360,64,17.24749755859375,25.521603266398113,,,0.801583,11095404544,0.972222,Digits
+run_44_repetition_4,TODO,RR,trh_gpu,iris, , , , , , , , , ,
+run_45_repetition_4,TODO,RR,trh_gpu,wine, , , , , , , , , ,
+run_46_repetition_4,TODO,RR,trh_gpu,breast_cancer, , , , , , , , , ,
+run_47_repetition_4,TODO,RR,trh_gpu,digits, , , , , , , , , ,
+run_48_repetition_4,TODO,DT,skl_cpu,iris, , , , , , , , , ,
+run_49_repetition_4,TODO,DT,skl_cpu,wine, , , , , , , , , ,
+run_50_repetition_4,TODO,DT,skl_cpu,breast_cancer, , , , , , , , , ,
+run_51_repetition_4,TODO,DT,skl_cpu,digits, , , , , , , , , ,
 run_52_repetition_4,TODO,DT,intelex_cpu,iris, , , , , , , , , ,
 run_53_repetition_4,TODO,DT,intelex_cpu,wine, , , , , , , , , ,
 run_54_repetition_4,TODO,DT,intelex_cpu,breast_cancer, , , , , , , , , ,
@@ -455,14 +455,14 @@ run_68_repetition_4,TODO,DT,trh_gpu,iris, , , , , , , , , ,
 run_69_repetition_4,TODO,DT,trh_gpu,wine, , , , , , , , , ,
 run_70_repetition_4,TODO,DT,trh_gpu,breast_cancer, , , , , , , , , ,
 run_71_repetition_4,TODO,DT,trh_gpu,digits, , , , , , , , , ,
-run_72_repetition_4,DONE,KMeans,skl_cpu,iris,100,4,17.08380126953125,25.028214156627655,,,0.80140364,11025866752,1.0,Iris
-run_73_repetition_4,DONE,KMeans,skl_cpu,wine,130,13,17.35455322265625,25.47709208726883,,,0.80142003,11028754432,0.938462,Wine
-run_74_repetition_4,DONE,KMeans,skl_cpu,breast_cancer,569,30,17.4246826171875,25.91618217031161,,,0.80159944,11029794816,0.905097,Breast Cancer
-run_75_repetition_4,DONE,KMeans,skl_cpu,digits,360,64,17.530517578125,26.15653611222903,,,0.80104417,11028488192,0.994444,Digits
-run_76_repetition_4,DONE,KMeans,intelex_cpu,iris,100,4,17.293762207045802,25.567006935675938,,,0.80194515,11028860928,1.0,Iris
-run_77_repetition_4,DONE,KMeans,intelex_cpu,wine,130,13,17.5474853515625,25.81244859099388,,,0.80136424,11018260480,0.938462,Wine
-run_78_repetition_4,DONE,KMeans,intelex_cpu,breast_cancer,569,30,17.999938964851026,26.60701756676038,,,0.8009482,11014995968,0.905097,Breast Cancer
-run_79_repetition_4,DONE,KMeans,intelex_cpu,digits,360,64,17.38079833984375,26.111631512641907,,,0.8010836,11007000576,0.994444,Digits
+run_72_repetition_4,TODO,KMeans,skl_cpu,iris, , , , , , , , , ,
+run_73_repetition_4,TODO,KMeans,skl_cpu,wine, , , , , , , , , ,
+run_74_repetition_4,TODO,KMeans,skl_cpu,breast_cancer, , , , , , , , , ,
+run_75_repetition_4,TODO,KMeans,skl_cpu,digits, , , , , , , , , ,
+run_76_repetition_4,TODO,KMeans,intelex_cpu,iris, , , , , , , , , ,
+run_77_repetition_4,TODO,KMeans,intelex_cpu,wine, , , , , , , , , ,
+run_78_repetition_4,TODO,KMeans,intelex_cpu,breast_cancer, , , , , , , , , ,
+run_79_repetition_4,TODO,KMeans,intelex_cpu,digits, , , , , , , , , ,
 run_80_repetition_4,TODO,KMeans,xgb_cpu,iris, , , , , , , , , ,
 run_81_repetition_4,TODO,KMeans,xgb_cpu,wine, , , , , , , , , ,
 run_82_repetition_4,TODO,KMeans,xgb_cpu,breast_cancer, , , , , , , , , ,
