@@ -1,10 +1,23 @@
 import sys
 import time
 import numpy as np
-from xgboost import XGBClassifier
+from xgboost import XGBClassifier, core
 from sklearn.datasets import load_breast_cancer, load_iris, load_wine, load_digits
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+
+
+
+try:
+    _test = XGBClassifier(tree_method="hist", device="cuda", n_estimators=1)
+    _test.fit(np.zeros((2, 2)), np.array([0, 1]))
+    print("GPU acceleration detected for XGBoost 2.x (device='cuda')\n")
+except core.XGBoostError as e:
+    raise RuntimeError(
+        "XGBoost GPU not available. Please install CUDA-enabled XGBoost "
+        "(e.g. `pip install xgboost>=2.0.0`) and ensure CUDA is configured.\n"
+        f"Details: {str(e)}"
+    )
 
 
 def run_decision_tree_xgb_gpu(dataset_name: str, random_state: int = 42):
@@ -54,10 +67,9 @@ def run_decision_tree_xgb_gpu(dataset_name: str, random_state: int = 42):
         learning_rate=0.1,
         max_depth=6,
         random_state=random_state,
-        use_label_encoder=False,
         eval_metric='logloss',
-        tree_method='gpu_hist',   # 使用 GPU 加速
-        predictor='gpu_predictor',
+        tree_method='hist',
+        device='cuda',
     )
 
     # 计时训练
@@ -87,6 +99,7 @@ def run_decision_tree_xgb_gpu(dataset_name: str, random_state: int = 42):
 
 
 if __name__ == "__main__":
+
     if len(sys.argv) < 2:
         print("Error: Missing dataset argument")
         print("Usage: python ml/DT_xgb_gpu.py <dataset_name>")

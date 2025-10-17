@@ -126,7 +126,7 @@ if __name__ == "__main__":
     weight_decay = float(sys.argv[4]) if len(sys.argv) > 4 else 1e-2
 
     result = run_ridge_regression_torch(
-        dataset_name=dataset_name,
+        dataset_name=dataset_name, 
         epochs=epochs,
         lr=lr,
         weight_decay=weight_decay

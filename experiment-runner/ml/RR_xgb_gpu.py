@@ -1,11 +1,21 @@
 import sys
 import time
 import numpy as np
-from xgboost import XGBRegressor
+from xgboost import XGBRegressor, core
 from sklearn.datasets import load_breast_cancer, load_iris, load_wine, load_digits
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_squared_error, r2_score
+
+try:
+    _test = XGBRegressor(tree_method="hist", device="cuda", n_estimators=1)
+    _test.fit(np.zeros((2, 2)), np.array([0, 1]))
+except core.XGBoostError as e:
+    raise RuntimeError(
+        "XGBoost GPU not available. Please install CUDA-enabled XGBoost "
+        "(e.g. `pip install xgboost>=2.0.0`) and ensure CUDA is configured.\n"
+        f"Details: {str(e)}"
+    )
 
 
 def run_ridge_regression_xgb_gpu(dataset_name: str, random_state: int = 42):
@@ -58,8 +68,8 @@ def run_ridge_regression_xgb_gpu(dataset_name: str, random_state: int = 42):
         subsample=0.9,
         colsample_bytree=0.9,
         random_state=random_state,
-        tree_method='gpu_hist',     # 使用 GPU 加速
-        predictor='gpu_predictor',
+        tree_method='hist',  
+        device='cuda',       
         n_jobs=-1
     )
 
@@ -94,6 +104,7 @@ def run_ridge_regression_xgb_gpu(dataset_name: str, random_state: int = 42):
 
 
 if __name__ == "__main__":
+
     if len(sys.argv) < 2:
         print("Error: Missing dataset argument")
         print("Usage: python ml/Ridge_xgb_gpu.py <dataset_name>")
