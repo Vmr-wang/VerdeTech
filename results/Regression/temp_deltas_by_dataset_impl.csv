@@ -1,0 +1,17 @@
+dataset,impl,cpu_temp_delta,gpu_temp_delta
+iris,skl_cpu,0,0.6
+wine,skl_cpu,0,0.6
+breast_cancer,skl_cpu,0.4,0.2
+digits,skl_cpu,0.20000000000000007,0.6
+iris,intelex_cpu,0.6,0.4
+wine,intelex_cpu,0,0.4
+breast_cancer,intelex_cpu,0.6,0.8
+digits,intelex_cpu,-1,0.4
+iris,xgb_gpu,1.1999999999999997,0.4
+wine,xgb_gpu,-0.4,0.6
+breast_cancer,xgb_gpu,1.2,0.8
+digits,xgb_gpu,-2.2,0.8
+iris,trh_gpu,1.2,1.2
+wine,trh_gpu,1.6,1.6
+breast_cancer,trh_gpu,2,1.6
+digits,trh_gpu,2.2,1.4
