@@ -72,4 +72,3 @@ dependencies:
       - typing-extensions==4.15.0
       - tzdata==2025.2
       - xgboost==3.0.5
-prefix: /home/abigale/anaconda3/envs/experiment-runner
