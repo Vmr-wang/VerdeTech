@@ -21,11 +21,8 @@ except core.XGBoostError as e:
 
 
 def run_decision_tree_xgb_gpu(dataset_name: str, random_state: int = 42):
-    """
-    运行 XGBoost（GPU）版 Decision Tree Classifier
-    返回 runtime 和 accuracy
-    """
-    # 加载数据
+
+    # Load data
     if dataset_name == 'iris':
         data = load_iris()
         mask = data.target < 2
@@ -52,16 +49,16 @@ def run_decision_tree_xgb_gpu(dataset_name: str, random_state: int = 42):
     else:
         raise ValueError(f"Unknown dataset: {dataset_name}")
 
-    # 数据标准化
+    # Standardize the features
     scaler = StandardScaler()
     X = scaler.fit_transform(X)
 
-    # 划分训练/测试集
+    #  Split the dataset into training and test sets
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=random_state, stratify=y
     )
 
-    # 定义 XGBoost 模型（GPU 版）
+    # Define the XGBoost model (CPU version)
     model = XGBClassifier(
         n_estimators=100,
         learning_rate=0.1,
@@ -72,15 +69,15 @@ def run_decision_tree_xgb_gpu(dataset_name: str, random_state: int = 42):
         device='cuda',
     )
 
-    # 计时训练
+    # Time the training
     start = time.time()
     model.fit(X_train, y_train)
     runtime = time.time() - start
 
-    # 准确率
+    # Accuracy
     acc = model.score(X_test, y_test)
 
-    # 打印结果（EnergiBridge 捕获）
+    # Print output (captured by EnergiBridge)
     print(f"DATASET_NAME: {display_name}")
     print(f"ACTUAL_SIZE: {len(y)}")
     print(f"N_FEATURES: {X.shape[1]}")
