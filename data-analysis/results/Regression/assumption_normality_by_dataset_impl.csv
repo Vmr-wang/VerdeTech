@@ -1,0 +1,17 @@
+dataset,impl,n,p_shapiro
+breast_cancer,intelex_cpu,20,NA
+breast_cancer,skl_cpu,20,NA
+breast_cancer,trh_gpu,20,NA
+breast_cancer,xgb_gpu,20,NA
+digits,intelex_cpu,20,NA
+digits,skl_cpu,20,NA
+digits,trh_gpu,20,NA
+digits,xgb_gpu,20,NA
+iris,intelex_cpu,20,NA
+iris,skl_cpu,20,NA
+iris,trh_gpu,20,NA
+iris,xgb_gpu,20,NA
+wine,intelex_cpu,20,NA
+wine,skl_cpu,20,NA
+wine,trh_gpu,20,NA
+wine,xgb_gpu,20,NA
