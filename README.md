@@ -45,13 +45,6 @@ VerdeTech systematically evaluates the energy efficiency and performance charact
 - **ps**: Real-time system monitoring
 - **Python 3**: All implementations with pinned dependencies
 
-### Experimental Design
-- **Factors**: Algorithm type (4 levels), Library (5 levels), Hardware (2 levels), Dataset size (3 levels)
-- **Treatments**: 13 valid algorithm-library-hardware combinations × 3 dataset sizes = 39 treatments
-- **Repetitions**: 20 runs per treatment (780 total runs)
-- **Duration**: ~50 hours estimated execution time
-- **Cool-down**: 3-minute intervals between runs for thermal stability
-
 ## Installation
 
 ### Prerequisites
