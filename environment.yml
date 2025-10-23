@@ -1,4 +1,4 @@
-name: experiment-runner
+name: verdetech
 channels:
   - defaults
 dependencies:
