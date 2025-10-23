@@ -2,7 +2,7 @@
 
 **SustainableML: Energy-Performance Trade-offs in Python Libraries for Machine Learning**
 
-[![Python 3.12](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.12](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![Ubuntu 20.04](https://img.shields.io/badge/Ubuntu-20.04-orange.svg)](https://ubuntu.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -57,7 +57,7 @@ VerdeTech systematically evaluates the energy efficiency and performance charact
 ### Prerequisites
 - Ubuntu 20.04
 - Python 3.12.12
-- NVIDIA GPU with CUDA support (optional, for GPU benchmarks)
+- NVIDIA GPU with CUDA support
 
 ### Setup Instructions
 
@@ -96,20 +96,6 @@ python -c "import sklearn, xgboost, torch, tensorflow as tf; print('All librarie
 | **TensorFlow** | 2.16.1 | CPU + GPU | K-Means |
 
 ## Usage
-
-### Running the Full Benchmark
-
-```bash
-# Execute complete experimental suite
-python experiments/run_full_benchmark.py
-
-# Monitor progress
-tail -f logs/experiment.log
-```
-
-### Individual Algorithm Testing
-
-
 
 ```shell
 cd experiment-runner
@@ -190,23 +176,22 @@ VerdeTech/
 
 The complete experiment consists of 13 algorithm-library-hardware combinations:
 
-| Algorithm | Library | Hardware | Dataset Sizes |
-|-----------|---------|----------|---------------|
-| Logistic Regression | scikit-learn | CPU | Small, Medium, Large |
-| Logistic Regression | PyTorch | GPU | Small, Medium, Large |
-| Logistic Regression | scikit-learn-intelex | CPU | Small, Medium, Large |
-| K-Means | scikit-learn | CPU | Small, Medium, Large |
-| K-Means | scikit-learn-intelex | CPU | Small, Medium, Large |
-| K-Means | TensorFlow | GPU | Small, Medium, Large |
-| Decision Tree | scikit-learn | CPU | Small, Medium, Large |
-| Decision Tree | XGBoost | CPU | Small, Medium, Large |
-| Decision Tree | XGBoost | GPU | Small, Medium, Large |
-| Ridge Regression | XGBoost | GPU | Small, Medium, Large |
-| Ridge Regression | PyTorch | GPU | Small, Medium, Large |
-| Ridge Regression | scikit-learn | CPU | Small, Medium, Large |
-| Ridge Regression | scikit-learn-intelex | CPU | Small, Medium, Large |
+| Algorithm | Library | Hardware | Dataset |
+| :--- | :--- | :--- | :--- |
+| Logical Regression | scikit-learn | CPU | {S, M, L} |
+| Logical Regression | PyTorch | GPU | {S, M, L} |
+| Logical Regression | scikit-learn-intelex | CPU | {S, M, L} |
+| K-Means | scikit-learn | CPU | {S, M, L} |
+| K-Means | scikit-learn-intelex | CPU | {S, M, L} |
+| K-Means | TensorFlow | GPU | {S, M, L} |
+| Decision Tree Classifier | scikit-learn | CPU | {S, M, L} |
+| Decision Tree Classifier | XGBoost | CPU | {S, M, L} |
+| Decision Tree Classifier | XGBoost | GPU | {S, M, L} |
+| Ridge Regression | XGBoost | GPU | {S, M, L} |
+| Ridge Regression | Pytorch | GPU | {S, M, L} |
+| Ridge Regression | scikit-learn | CPU | {S, M, L} |
+| Ridge Regression | scikit-learn-intelex | CPU | {S, M, L} |
 
-**Total**: 39 treatments × 20 repetitions = 780 experimental runs
 
 ### Estimated Execution Times
 - **Small datasets** (Iris, Auto-mpg): ~10 seconds per run
