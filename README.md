@@ -122,46 +122,15 @@ tail -f logs/experiment.log
 
 ### Individual Algorithm Testing
 
-```bash
-# Test specific algorithm-library combination
-python experiments/single_test.py --algorithm "Logistic Regression" --library scikit-learn --hardware cpu
 
-# Test with specific dataset size
-python experiments/single_test.py --algorithm "K-Means" --library tensorflow --hardware gpu --dataset_size medium
-```
 
-### Custom Configuration
-
-Create your own configuration file:
-
-```yaml
-# config/custom_experiment.yml
-experiment:
-  repetitions: 20
-  cooldown_minutes: 3
-  warmup_runs: 3
-
-measurements:
-  energy_sampling_rate: 10  # Hz
-  monitor_memory: true
-  monitor_cpu: true
-  monitor_gpu: true
-
-algorithms:
-  - name: "Logistic Regression"
-    libraries: ["scikit-learn", "pytorch", "scikit-learn-intelex"]
-    datasets: ["small", "medium", "large"]
-    hardware: ["cpu", "gpu"]
-
-output:
-  directory: "results/"
-  format: "csv"
-  include_raw: true
+```shell
+cd cd experiment-runner
 ```
 
 Then run:
 ```bash
-python experiments/run_custom.py --config config/custom_experiment.yml
+python __main__.py ml/RunnerConfig.py
 ```
 
 ## Project Structure
@@ -289,18 +258,6 @@ python analysis/visualizations.py --results run_table.csv --output plots/
 # Generate final report
 python analysis/report_generation.py --create-pdf
 ```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/improvement`)
-3. Make changes following the coding standards
-4. Add tests for new functionality
-5. Run the test suite (`python -m pytest tests/`)
-6. Commit changes (`git commit -m "Add feature: description"`)
-7. Push to branch (`git push origin feature/improvement`)
-8. Create a Pull Request
-
 
 
 ## Citation
