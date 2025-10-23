@@ -9,7 +9,6 @@ from sklearn.preprocessing import StandardScaler
 
 
 def _load_dataset(dataset_name: str):
-    """统一数据加载逻辑（与前面保持一致）"""
     if dataset_name == 'iris':
         data = load_iris()
         mask = data.target < 2
@@ -42,7 +41,7 @@ def _load_dataset(dataset_name: str):
 
 
 class RidgeRegressionTorch(nn.Module):
-    """线性模型（Ridge Regression）"""
+    """（Ridge Regression）"""
     def __init__(self, in_features: int):
         super().__init__()
         self.linear = nn.Linear(in_features, 1, bias=True)
@@ -54,7 +53,7 @@ class RidgeRegressionTorch(nn.Module):
 def run_ridge_regression_torch(dataset_name: str, random_state: int = 42,
                                epochs: int = 300, lr: float = 1e-2,
                                weight_decay: float = 1e-2):
-    """运行 PyTorch Ridge Regression（GPU）"""
+    
     torch.manual_seed(random_state)
     np.random.seed(random_state)
 
@@ -85,7 +84,7 @@ def run_ridge_regression_torch(dataset_name: str, random_state: int = 42,
         optimizer.step()
     runtime = time.time() - start
 
-    # 评估性能：使用 R^2 作为 accuracy proxy
+    # Evaluate performance using R^2 as an accuracy proxy
     model.eval()
     with torch.no_grad():
         preds = model(X_test_t)
