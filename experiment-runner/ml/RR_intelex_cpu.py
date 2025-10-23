@@ -1,7 +1,7 @@
 import sys
 import time
 from sklearnex import patch_sklearn
-patch_sklearn()  # 启用 Intel oneDAL 加速，必须在 sklearn 导入前
+patch_sklearn()  
 
 from sklearn.datasets import load_breast_cancer, load_iris, load_wine, load_digits
 from sklearn.model_selection import train_test_split
@@ -11,11 +11,8 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 
 def run_ridge_regression_intelex(dataset_name: str, random_state: int = 42, alpha: float = 1.0):
-    """
-    运行 scikit-learn-intelex 加速版 Ridge Regression
-    返回 runtime、MSE、R²
-    """
-    # 加载数据
+   
+    # Load data
     if dataset_name == 'iris':
         data = load_iris()
         mask = data.target < 2
@@ -42,29 +39,29 @@ def run_ridge_regression_intelex(dataset_name: str, random_state: int = 42, alph
     else:
         raise ValueError(f"Unknown dataset: {dataset_name}")
 
-    # 标准化
+    # Standardize the data
     scaler = StandardScaler()
     X = scaler.fit_transform(X)
 
-    # 划分训练/测试集
+    #  Split the dataset into training and test sets
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=random_state
     )
 
-    # 定义模型（启用 oneDAL 加速）
+    # Define the model (with Intel oneDAL acceleration enabled)
     model = Ridge(alpha=alpha, random_state=random_state)
 
-    # 计时训练
+    # Time the training
     start = time.time()
     model.fit(X_train, y_train)
     runtime = time.time() - start
 
-    # 预测与评估
+    # Prediction and evaluation
     y_pred = model.predict(X_test)
     mse = mean_squared_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
 
-    # 打印结果（EnergiBridge 捕获）
+    # Print output (captured by EnergiBridge)
     print(f"DATASET_NAME: {display_name}")
     print(f"ACTUAL_SIZE: {len(y)}")
     print(f"N_FEATURES: {X.shape[1]}")
