@@ -1,5 +1,11 @@
 import sys
-sys.path.insert(0, '/home/abigale/anaconda3/envs/experiment-runner/lib/python3.10/site-packages')
+import os
+
+# If there is a relative site-packages directory in the project, add it to sys.path; otherwise, don't modify sys.path
+site_pkgs = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'site-packages'))
+if os.path.isdir(site_pkgs):
+    sys.path.insert(0, site_pkgs)
+
 from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import load_breast_cancer, load_iris, load_wine, load_digits
 from sklearn.model_selection import train_test_split
@@ -8,13 +14,13 @@ import time
 
 def run_logistic_regression_sklearn(dataset_name: str, random_state: int = 42):
     """
-    运行 sklearn Logistic Regression 并返回 runtime 和 accuracy
+    Run sklearn Logistic Regression and return runtime and accuracy
     
-    参数:
-        dataset_name: 数据集名称 ('iris', 'wine', 'breast_cancer', 'digits')
+    Parameters:
+        dataset_name: name of dataset ('iris', 'wine', 'breast_cancer', 'digits')
     """
     
-    # 根据数据集名称加载数据
+    # Load dataset based on dataset name
     if dataset_name == 'iris':
         data = load_iris()
         mask = data.target < 2
@@ -41,25 +47,25 @@ def run_logistic_regression_sklearn(dataset_name: str, random_state: int = 42):
     else:
         raise ValueError(f"Unknown dataset: {dataset_name}")
     
-    # 数据标准化
+    # Data standardization
     scaler = StandardScaler()
     X = scaler.fit_transform(X)
     
-    # 划分训练集 / 测试集
+    # Split training/test sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=random_state)
     
-    # 定义模型
+    # Define model
     model = LogisticRegression(random_state=random_state, max_iter=1000)
     
-    # 计时 & 训练
+    # Time tracking & training
     start = time.time()
     model.fit(X_train, y_train)
     runtime = time.time() - start
     
-    # 预测 & 计算准确率
+    # Predict & calculate accuracy
     acc = model.score(X_test, y_test)
     
-    # 打印详细信息（EnergiBridge 会捕获）
+    # Print detailed information (captured by EnergiBridge)
     print(f"DATASET_NAME: {display_name}")
     print(f"ACTUAL_SIZE: {len(y)}")
     print(f"N_FEATURES: {X.shape[1]}")
@@ -76,7 +82,7 @@ def run_logistic_regression_sklearn(dataset_name: str, random_state: int = 42):
 
 
 if __name__ == "__main__":
-    # 从命令行读取参数
+    # Read parameters from command line
     if len(sys.argv) < 2:
         print("Error: Missing dataset argument")
         print("Usage: python ml/LR_skl.py <dataset_name>")
@@ -85,10 +91,10 @@ if __name__ == "__main__":
     
     dataset_name = sys.argv[1]
     
-    # 运行实验
+    # Run experiment
     result = run_logistic_regression_sklearn(dataset_name=dataset_name)
     
-    # 打印最终汇总
+    # Print final summary
     print(f"\n=== Experiment Complete ===")
     print(f"Dataset: {result['dataset_name']} ({result['actual_size']} samples, {result['n_features']} features)")
     print(f"Runtime: {result['runtime']:.4f}s")

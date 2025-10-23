@@ -1,5 +1,4 @@
 import sys
-sys.path.insert(0, '/home/abigale/anaconda3/envs/experiment-runner/lib/python3.10/site-packages')
 import torch
 import torch.nn as nn
 import torch.optim as optim
