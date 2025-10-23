@@ -20,16 +20,6 @@ VerdeTech systematically evaluates the energy efficiency and performance charact
 - **Hardware Coverage**: CPU-only and GPU-accelerated implementations
 - **Practical Insights**: Energy-performance trade-offs for sustainable ML development
 
-## Research Questions
-
-**RQ1**: What are the energy usage differences between Python ML libraries for identical algorithms?
-
-**RQ2**: How does energy usage relate to performance aspects and what trade-offs emerge?
-- **RQ2.1**: Energy vs. Memory utilization correlation
-- **RQ2.2**: Energy vs. Execution time trade-offs  
-- **RQ2.3**: Energy vs. CPU/GPU utilization relationships
-- **RQ2.4**: Energy vs. ML effectiveness metrics balance
-
 ## Experimental Setup
 
 ### Hardware Configuration
@@ -103,7 +93,6 @@ python __main__.py ml/RunnerConfig.py
 
 ```
 VerdeTech/
-├── CITATION.cff                    # Academic citation file
 ├── LICENSE                         # Project license
 ├── README.md                       # Project documentation
 ├── environment.yml                 # Conda environment specification
