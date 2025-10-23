@@ -55,10 +55,9 @@ VerdeTech systematically evaluates the energy efficiency and performance charact
 ## Installation
 
 ### Prerequisites
-- Ubuntu 20.04+ (recommended) or similar Linux distribution
+- Ubuntu 20.04
 - Python 3.8+
 - NVIDIA GPU with CUDA support (optional, for GPU benchmarks)
-- 16 GB RAM minimum
 
 ### Setup Instructions
 
@@ -169,33 +168,66 @@ python experiments/run_custom.py --config config/custom_experiment.yml
 
 ```
 VerdeTech/
-├── experiments/
-│   ├── run_full_benchmark.py    # Main experiment script
-│   ├── single_test.py           # Individual test runner
-│   ├── run_custom.py           # Custom configuration runner
-│   └── config/                 # Experiment configurations
-├── src/
-│   ├── benchmarks/             # Benchmarking framework
-│   ├── energy/                 # Energy measurement integration
-│   ├── algorithms/             # Algorithm implementations
-│   ├── datasets/               # Dataset management
-│   └── analysis/               # Statistical analysis tools
-├── data/
-│   ├── datasets/               # Benchmark datasets
-│   └── results/                # Experimental results
-├── scripts/
-│   ├── setup_environment.sh    # Environment setup
-│   ├── install_energibridge.sh # EnergiBridge installation
-│   └── verify_setup.py        # Installation verification
-├── analysis/
-│   ├── statistical_tests.R     # R scripts for hypothesis testing
-│   ├── visualizations.py       # Result plotting
-│   └── report_generation.py    # Automated reporting
-├── logs/                       # Execution logs
-├── environment.yml             # Conda environment
-├── requirements.txt            # pip requirements
-├── environment-dev.yml         # Development environment
-└── run_table.csv              # Results database (generated)
+├── CITATION.cff                    # Academic citation file
+├── LICENSE                         # Project license
+├── README.md                       # Project documentation
+├── environment.yml                 # Conda environment specification
+├── requirements.txt                # Python dependencies
+├── RunnerConfig_nvidia.py          # NVIDIA-specific configuration
+├── test.csv                        # Test data file
+│
+├── data-analysis/                  # Statistical analysis & visualization
+│   ├── analysis.R                  # Main R analysis script
+│   ├── figs/                       # Generated visualization plots
+│   │   ├── Classification/         # Classification algorithm plots
+│   │   ├── Clustering/             # Clustering algorithm plots
+│   │   └── Regression/             # Regression algorithm plots
+│   └── results/                    # Statistical analysis results
+│       ├── Classification/         # Classification results (CSV files)
+│       ├── Clustering/             # Clustering results (CSV files)
+│       ├── Regression/             # Regression results (CSV files)
+│       ├── DONE.txt               # Analysis completion marker
+│       ├── outliers_report.csv    # Outliers analysis
+│       └── sessionInfo.txt        # R session information
+│
+├── experiment-runner/              # Core experiment framework
+│   ├── __main__.py                 # Framework entry point
+│   ├── ConfigValidator/            # Configuration validation system
+│   ├── EventManager/              # Event handling system
+│   ├── ExperimentOrchestrator/     # Core experiment execution
+│   ├── ExtendedTyping/            # Type system extensions
+│   │
+│   ├── ml/                        # Machine learning implementations
+│   │   ├── DT_skl_cpu.py          # Decision Tree (scikit-learn, CPU)
+│   │   ├── DT_xgb_cpu.py          # Decision Tree (XGBoost, CPU)
+│   │   ├── DT_xgb_gpu.py          # Decision Tree (XGBoost, GPU)
+│   │   ├── KMeans_skl_cpu.py      # K-Means (scikit-learn, CPU)
+│   │   ├── KMeans_intelex_cpu.py  # K-Means (Intel Extension, CPU)
+│   │   ├── KMeans_tf_gpu.py       # K-Means (TensorFlow, GPU)
+│   │   ├── LR_skl_cpu.py          # Logistic Regression (scikit-learn, CPU)
+│   │   ├── LR_intelex_cpu.py      # Logistic Regression (Intel Extension, CPU)
+│   │   ├── LR_trh_gpu.py          # Logistic Regression (PyTorch, GPU)
+│   │   ├── RR_skl_cpu.py          # Ridge Regression (scikit-learn, CPU)
+│   │   ├── RR_intelex_cpu.py      # Ridge Regression (Intel Extension, CPU)
+│   │   ├── RR_trh_gpu.py          # Ridge Regression (PyTorch, GPU)
+│   │   └── RR_xgb_gpu.py          # Ridge Regression (XGBoost, GPU)
+│   │
+│   ├── Plugins/                   # Extensible plugin system
+│   │   └── Profilers/             # Energy profiling plugins
+│   │       ├── CodecarbonWrapper.py    # CodeCarbon integration
+│   │       ├── EnergiBridge.py         # EnergiBridge hardware profiler
+│   │       ├── NvidiaML.py             # NVIDIA ML profiling
+│   │       ├── PowerJoular.py          # PowerJoular integration
+│   │       ├── PowerMetrics.py         # Power metrics collection
+│   │       └── WattsUpPro.py           # WattsUp Pro meter
+│   │
+│   ├── ProgressManager/           # Experiment progress tracking
+│   ├── documentation/             # Framework documentation
+│   ├── test/                      # Framework unit tests
+│   └── test-standalone/           # Standalone test configurations
+│
+├── test/                          # Project-level tests
+└── test-standalone/               # Standalone test suite
 ```
 
 ## Experimental Execution Plan
@@ -269,22 +301,7 @@ python analysis/report_generation.py --create-pdf
 7. Push to branch (`git push origin feature/improvement`)
 8. Create a Pull Request
 
-## System Requirements
 
-### Minimum Requirements
-- Ubuntu 18.04+ or equivalent Linux distribution
-- Python 3.8+
-- 8 GB RAM
-- 50 GB free disk space
-- Intel processor with RAPL support
-
-### Recommended Requirements
-- Ubuntu 20.04 LTS
-- Python 3.9+
-- 16 GB RAM
-- 100 GB free disk space
-- NVIDIA GPU with CUDA support
-- Intel processor with AVX-512 support
 
 ## Citation
 
