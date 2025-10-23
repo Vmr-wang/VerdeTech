@@ -20,15 +20,15 @@ class LogisticRegressionModel(nn.Module):
 
 def run_logistic_regression_pytorch(dataset_name: str, random_state: int = 42):
     """
-    运行 PyTorch Logistic Regression（仅限 GPU）
+    Run PyTorch Logistic Regression (GPU only)
     """
-    # ✅ 强制使用 GPU
+    # ✅ Force GPU usage
     if not torch.cuda.is_available():
         raise RuntimeError("GPU not detected. Please enable CUDA or install a GPU-enabled PyTorch.")
     device = torch.device("cuda")
     print(f"✅ Using GPU: {torch.cuda.get_device_name(0)}\n")
 
-    # 加载数据集
+    # Load dataset
     if dataset_name == 'iris':
         data = load_iris()
         mask = data.target < 2
@@ -55,25 +55,25 @@ def run_logistic_regression_pytorch(dataset_name: str, random_state: int = 42):
     else:
         raise ValueError(f"Unknown dataset: {dataset_name}")
     
-    # 数据标准化
+    # Data standardization
     scaler = StandardScaler()
     X = scaler.fit_transform(X)
     
-    # 划分训练集 / 测试集
+    # Split training/test sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=random_state)
     
-    # ✅ 将数据移动到 GPU
+    # ✅ Move data to GPU
     X_train = torch.tensor(X_train, dtype=torch.float32, device=device)
     y_train = torch.tensor(y_train, dtype=torch.float32, device=device).view(-1, 1)
     X_test = torch.tensor(X_test, dtype=torch.float32, device=device)
     y_test = torch.tensor(y_test, dtype=torch.float32, device=device).view(-1, 1)
     
-    # 定义模型并放到 GPU
+    # Define model and move to GPU
     model = LogisticRegressionModel(X_train.shape[1]).to(device)
     criterion = nn.BCELoss()
     optimizer = optim.SGD(model.parameters(), lr=0.01)
     
-    # 计时 & 训练
+    # Timer & Training
     start = time.time()
     for epoch in range(100):
         optimizer.zero_grad(set_to_none=True)
@@ -84,12 +84,12 @@ def run_logistic_regression_pytorch(dataset_name: str, random_state: int = 42):
     
     runtime = time.time() - start
     
-    # 在测试集上预测 & 准确率
+    # Predict on test set & calculate accuracy
     with torch.no_grad():
         preds = (model(X_test) >= 0.5).float()
         acc = (preds == y_test).float().mean().item()
     
-    # 打印详细信息（EnergiBridge 会捕获）
+    # Print details (will be captured by EnergiBridge)
     print(f"DATASET_NAME: {display_name}")
     print(f"ACTUAL_SIZE: {len(y)}")
     print(f"N_FEATURES: {X.shape[1]}")
@@ -127,5 +127,3 @@ if __name__ == "__main__":
     print(f"Dataset: {result['dataset_name']} ({result['actual_size']} samples, {result['n_features']} features)")
     print(f"Runtime: {result['runtime']:.4f}s")
     print(f"Accuracy: {result['accuracy']:.4f}")
-
-    
