@@ -1,7 +1,7 @@
 import sys
 import time
 from sklearnex import patch_sklearn
-patch_sklearn()  # 必须在 sklearn 导入前调用！
+patch_sklearn()  
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.datasets import load_breast_cancer, load_iris, load_wine, load_digits
@@ -9,11 +9,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 def run_logistic_regression_sklearn_intelex(dataset_name: str, random_state: int = 42):
-    """
-    运行 scikit-learn-intelex 加速的 Logistic Regression
-    返回 runtime 和 accuracy
-    """
-    # 根据数据集名称加载数据
+    
+    # Load data based on the dataset name
     if dataset_name == 'iris':
         data = load_iris()
         mask = data.target < 2
@@ -36,27 +33,27 @@ def run_logistic_regression_sklearn_intelex(dataset_name: str, random_state: int
     else:
         raise ValueError(f"Unknown dataset: {dataset_name}")
 
-    # 数据标准化
+    # Standardize the data
     scaler = StandardScaler()
     X = scaler.fit_transform(X)
 
-    # 划分训练/测试集
+    #  Split the dataset into training and test sets
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=random_state
     )
 
-    # 定义模型（启用 Intel oneDAL 加速）
+    # Define the model (with Intel oneDAL acceleration enabled)
     model = LogisticRegression(random_state=random_state, max_iter=1000)
 
-    # 训练计时
+    # Time the training
     start = time.time()
     model.fit(X_train, y_train)
     runtime = time.time() - start
 
-    # 预测与准确率
+    # Prediction and accuracy
     acc = model.score(X_test, y_test)
 
-    # 打印输出（EnergiBridge捕获）
+    # Print output (captured by EnergiBridge)
     print(f"DATASET_NAME: {display_name}")
     print(f"ACTUAL_SIZE: {len(y)}")
     print(f"N_FEATURES: {X.shape[1]}")
