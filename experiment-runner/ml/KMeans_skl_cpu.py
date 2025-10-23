@@ -8,7 +8,7 @@ from sklearn.cluster import KMeans
 from scipy.stats import mode
 
 def _load_dataset(dataset_name: str):
-    """与逻辑回归一致的数据加载逻辑"""
+    
     if dataset_name == 'iris':
         data = load_iris()
         mask = data.target < 2
@@ -41,24 +41,21 @@ def _load_dataset(dataset_name: str):
 
 
 def run_kmeans_sklearn(dataset_name: str, random_state: int = 42, n_clusters: int = 2):
-    """
-    运行 scikit-learn 的 K-Means 聚类
-    返回 runtime 和 approximate accuracy
-    """
+    
     X, y, display_name = _load_dataset(dataset_name)
 
-    # 初始化模型
+    # Initialize the model
     model = KMeans(n_clusters=n_clusters, random_state=random_state, n_init=10)
 
-    # 计时训练
+    # Time the training
     start = time.time()
     model.fit(X)
     runtime = time.time() - start
 
-    # 计算聚类的“伪准确率”
+    # Calculate a "pseudo-accuracy" for the clustering
     labels = model.labels_
 
-    # 尝试对齐聚类标签与真实标签（仅用于报告，不影响无监督算法的定义）
+    # Attempt to align cluster labels with ground truth labels
     if len(np.unique(y)) == n_clusters:
         new_labels = np.zeros_like(labels)
         for i in range(n_clusters):
@@ -69,7 +66,7 @@ def run_kmeans_sklearn(dataset_name: str, random_state: int = 42, n_clusters: in
     else:
         acc = np.nan  # 对非二分类数据无法对齐标签
 
-    # 打印结果（EnergiBridge 捕获）
+    # Print output (captured by EnergiBridge)
     print(f"DATASET_NAME: {display_name}")
     print(f"ACTUAL_SIZE: {len(y)}")
     print(f"N_FEATURES: {X.shape[1]}")
