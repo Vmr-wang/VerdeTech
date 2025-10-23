@@ -2,7 +2,7 @@
 
 **SustainableML: Energy-Performance Trade-offs in Python Libraries for Machine Learning**
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.12](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Ubuntu 20.04](https://img.shields.io/badge/Ubuntu-20.04-orange.svg)](https://ubuntu.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -56,7 +56,7 @@ VerdeTech systematically evaluates the energy efficiency and performance charact
 
 ### Prerequisites
 - Ubuntu 20.04
-- Python 3.8+
+- Python 3.12.12
 - NVIDIA GPU with CUDA support (optional, for GPU benchmarks)
 
 ### Setup Instructions
@@ -79,24 +79,11 @@ conda activate verdetech
 python -c "import sklearn, xgboost, torch, tensorflow as tf; print('All libraries installed successfully!')"
 ```
 
-3. **Alternative: pip installation**
-```bash
-# Create virtual environment
-python3 -m venv verdetech
-source verdetech/bin/activate
 
-# Install requirements
-pip install -r requirements.txt
-```
 
 4. **Install additional tools**
-```bash
-# Install EnergiBridge (if not included)
-# Follow EnergiBridge installation instructions for your system
+[Install Experiment runner](https://github.com/S2-group/green-lab/blob/main/Lab%201/setup/Setup.md)
 
-# Verify energy measurement capability
-sudo python -c "import subprocess; print('RAPL available:', 'intel-rapl' in str(subprocess.run(['ls', '/sys/class/powercap/'], capture_output=True)))"
-```
 
 ## Library Coverage
 
@@ -125,7 +112,7 @@ tail -f logs/experiment.log
 
 
 ```shell
-cd cd experiment-runner
+cd experiment-runner
 ```
 
 Then run:
@@ -230,6 +217,8 @@ The complete experiment consists of 13 algorithm-library-hardware combinations:
 
 ## Data Analysis
 
+Data analysis is done using `R 4.5.1`
+
 ### Statistical Methods
 - **Normality Testing**: Shapiro-Wilk test
 - **Variance Homogeneity**: Levene's test
@@ -246,18 +235,7 @@ The complete experiment consists of 13 algorithm-library-hardware combinations:
 
 ## Results and Visualization
 
-Results are automatically processed and visualized:
 
-```bash
-# Generate analysis reports
-python analysis/statistical_tests.py --input run_table.csv
-
-# Create visualizations
-python analysis/visualizations.py --results run_table.csv --output plots/
-
-# Generate final report
-python analysis/report_generation.py --create-pdf
-```
 
 
 ## Citation
