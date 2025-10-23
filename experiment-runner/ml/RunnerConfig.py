@@ -160,7 +160,7 @@ class RunnerConfig:
                 gpu_temp = self.get_gpu_temp()
                 output.console_log(f"[Warm-up Temps] CPU={cpu_temp}°C | GPU={gpu_temp}°C")
                 os.system(cmd)
-                time.sleep(10) # Cool down for 10s
+                time.sleep(180) # Cool down for 3 minutes 
 
         output.console_log("[Warm-up] Completed.\n")
 
@@ -192,7 +192,7 @@ class RunnerConfig:
         if (alg, impl) not in self.valid_pairs:
             output.console_log(f"Skipping invalid combination: {alg}_{impl}")
             context.skip_run = True
-            # 有的 Runner 支持 skip_run，有的不支持；保险起见直接 return
+            
             return
 
 
@@ -238,8 +238,8 @@ class RunnerConfig:
         output.console_log(f"[Run End] CPU={cpu_temp_after}°C | GPU={gpu_temp_after}°C")
 
         # --- Cool-down ---
-        output.console_log("[Cool-down] Waiting for 1 minute...")
-        time.sleep(60)  # Cool down for 1 minute
+        output.console_log("[Cool-down] Waiting for 3 minute...")
+        time.sleep(180)  # Cool down for3 minutes
 
 
     def stop_run(self, context: RunnerContext) -> None:
@@ -262,7 +262,7 @@ class RunnerConfig:
         cpu_util_cols = [c for c in eb_log.keys() if c.startswith("CPU_USAGE_")]
         cpu_util = None
         if cpu_util_cols:
-            # 计算所有 CPU 核心的平均利用率
+            # Calculate the average utilization of all CPU cores
             all_values = []
             for col in cpu_util_cols:
                 all_values.extend(list(eb_log[col].values()))
