@@ -16,7 +16,6 @@ VerdeTech systematically evaluates the energy efficiency and performance charact
 
 - **Empirical Energy Analysis**: Measure real energy consumption using RAPL (CPU) and NVML (GPU)
 - **Cross-Library Comparison**: Compare scikit-learn, XGBoost, PyTorch, TensorFlow, and scikit-learn-intelex
-- **Statistical Rigor**: 780 experimental runs with 20 repetitions per configuration
 - **Hardware Coverage**: CPU-only and GPU-accelerated implementations
 - **Practical Insights**: Energy-performance trade-offs for sustainable ML development
 
