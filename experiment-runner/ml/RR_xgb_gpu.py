@@ -19,11 +19,8 @@ except core.XGBoostError as e:
 
 
 def run_ridge_regression_xgb_gpu(dataset_name: str, random_state: int = 42):
-    """
-    运行 XGBoost（GPU）版 Ridge Regression（基于 reg:squarederror）
-    返回 runtime、MSE、R²
-    """
-    # 加载数据
+    
+    # Load data
     if dataset_name == 'iris':
         data = load_iris()
         mask = data.target < 2
@@ -50,16 +47,16 @@ def run_ridge_regression_xgb_gpu(dataset_name: str, random_state: int = 42):
     else:
         raise ValueError(f"Unknown dataset: {dataset_name}")
 
-    # 数据标准化
+    # Standardize the data
     scaler = StandardScaler()
     X = scaler.fit_transform(X)
 
-    # 划分训练/测试集
+    #  Split the dataset into training and test sets
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=random_state
     )
 
-    # 定义 XGBoost 回归模型（GPU 版）
+    # Define the model (with Intel oneDAL acceleration enabled)
     model = XGBRegressor(
         objective="reg:squarederror",
         n_estimators=200,
@@ -73,17 +70,17 @@ def run_ridge_regression_xgb_gpu(dataset_name: str, random_state: int = 42):
         n_jobs=-1
     )
 
-    # 计时训练
+    # Time the training
     start = time.time()
     model.fit(X_train, y_train)
     runtime = time.time() - start
 
-    # 预测与评估
+    # Prediction and evaluation
     y_pred = model.predict(X_test)
     mse = mean_squared_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
 
-    # 输出结果（EnergiBridge 捕获）
+    # Print output (captured by EnergiBridge)
     print(f"DATASET_NAME: {display_name}")
     print(f"ACTUAL_SIZE: {len(y)}")
     print(f"N_FEATURES: {X.shape[1]}")
