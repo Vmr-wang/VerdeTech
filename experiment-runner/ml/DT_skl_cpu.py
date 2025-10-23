@@ -7,10 +7,8 @@ from sklearn.tree import DecisionTreeClassifier
 
 
 def run_decision_tree_sklearn(dataset_name: str, random_state: int = 42, max_depth: int = None):
-    """
-    运行 scikit-learn 的 Decision Tree Classifier 并返回 runtime 和 accuracy
-    """
-    # 加载数据
+   
+    # Load data
     if dataset_name == 'iris':
         data = load_iris()
         mask = data.target < 2
@@ -37,28 +35,28 @@ def run_decision_tree_sklearn(dataset_name: str, random_state: int = 42, max_dep
     else:
         raise ValueError(f"Unknown dataset: {dataset_name}")
 
-    # 标准化（树模型不是必须，但保持一致性）
+    # Standardize the features (not necessary for tree-based models, but for consistency)
     scaler = StandardScaler()
     X = scaler.fit_transform(X)
 
-    # 划分训练/测试集
+    #  Split the dataset into training and test sets
     from sklearn.model_selection import train_test_split
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=random_state, stratify=y
     )
 
-    # 模型定义
+    # Define the model
     model = DecisionTreeClassifier(random_state=random_state, max_depth=max_depth)
 
-    # 训练计时
+    # Calculate training time
     start = time.time()
     model.fit(X_train, y_train)
     runtime = time.time() - start
 
-    # 计算准确率
+    # Calculate accuracy
     acc = model.score(X_test, y_test)
 
-    # 输出结果（EnergiBridge捕获）
+    # Capture output by EnergiBridge
     print(f"DATASET_NAME: {display_name}")
     print(f"ACTUAL_SIZE: {len(y)}")
     print(f"N_FEATURES: {X.shape[1]}")
