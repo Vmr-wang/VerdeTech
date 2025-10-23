@@ -232,9 +232,89 @@ Data analysis is done using `R 4.5.1`
 - **statistical_results.json**: Hypothesis testing outcomes
 - **energy_analysis.csv**: Energy consumption analysis
 - **performance_correlations.csv**: Performance relationship data
+Below are the main figures generated under `data-analysis/figs/`. Images are arranged by analysis type for a compact, readable layout.
 
-## Results and Visualization
+#### Classification
+<table>
+<tr>
+<td align="center">
+<img src="data-analysis/figs/Classification/energy_total_density_impl_by_dataset.png" alt="Total Energy Density (Classification)" width="420"/>
+<br><em>Fig 1. Total energy consumption density by implementation and dataset (classification workloads).</em>
+</td>
+<td align="center">
+<img src="data-analysis/figs/Classification/accuracy_density_impl_by_dataset.png" alt="Accuracy Density by Implementation and Dataset (Classification)" width="420"/>
+<br><em>Fig 2. Accuracy density per implementation and dataset.</em>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="data-analysis/figs/Classification/runtime_density_impl_by_dataset.png" alt="Runtime Density (Classification)" width="420"/>
+<br><em>Fig 3. Runtime density by implementation and dataset.</em>
+</td>
+<td align="center">
+<img src="data-analysis/figs/Classification/power_avg_total_density_impl_by_dataset.png" alt="Average Total Power Density (Classification)" width="420"/>
+<br><em>Fig 4. Average total power consumption density.</em>
+</td>
+</tr>
+</table>
 
+#### Clustering
+<table>
+<tr>
+<td align="center">
+<img src="data-analysis/figs/Clustering/energy_total_density_impl_by_dataset.png" alt="Total Energy Density (Clustering)" width="420"/>
+<br><em>Fig 5. Total energy consumption density for clustering algorithms.</em>
+</td>
+<td align="center">
+<img src="data-analysis/figs/Clustering/accuracy_density_impl_by_dataset.png" alt="Accuracy Density (Clustering)" width="420"/>
+<br><em>Fig 6. Clustering accuracy density by implementation and dataset.</em>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="data-analysis/figs/Clustering/runtime_density_impl_by_dataset.png" alt="Runtime Density (Clustering)" width="420"/>
+<br><em>Fig 7. Runtime density for clustering algorithms.</em>
+</td>
+<td align="center">
+<img src="data-analysis/figs/Clustering/cpu_util_density_impl_by_dataset.png" alt="CPU Utilization Density (Clustering)" width="420"/>
+<br><em>Fig 8. CPU utilization density by implementation.</em>
+</td>
+</tr>
+</table>
+
+#### Regression
+<table>
+<tr>
+<td align="center">
+<img src="data-analysis/figs/Regression/energy_total_density_impl_by_dataset.png" alt="Total Energy Density (Regression)" width="420"/>
+<br><em>Fig 9. Total energy consumption density for regression models.</em>
+</td>
+<td align="center">
+<img src="data-analysis/figs/Regression/mse_density_impl_by_dataset.png" alt="MSE Density (Regression)" width="420"/>
+<br><em>Fig 10. Mean Squared Error density by implementation and dataset.</em>
+</td>
+</tr>
+<tr>
+<td align="center">
+<img src="data-analysis/figs/Regression/runtime_density_impl_by_dataset.png" alt="Runtime Density (Regression)" width="420"/>
+<br><em>Fig 11. Runtime density for regression models.</em>
+</td>
+<td align="center">
+<img src="data-analysis/figs/Regression/gpu_energy_density_impl_by_dataset.png" alt="GPU Energy Density (Regression)" width="420"/>
+<br><em>Fig 12. GPU energy consumption density.</em>
+</td>
+</tr>
+</table>
+
+#### Detailed Performance Metrics
+<table>
+<tr>
+<td align="center" colspan="2">
+<img src="data-analysis/figs/Classification/power_avg_gpu_meas_violin_impl_by_dataset.png" alt="GPU Power Violin Plot (Classification)" width="880"/>
+<br><em>Fig 13. GPU power consumption distribution (violin plot) for classification tasks.</em>
+</td>
+</tr>
+</table>
 
 
 
